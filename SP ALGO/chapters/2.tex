@@ -284,3 +284,31 @@ Hasilnya  di Google Chrome Akan mucul seperti ini :
 	\caption{Halaman Daftar}
 \end{figure}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Masukkan code berikut untuk test mengisi form email dan tanggal lahir pada halaman pendaftaran :
+\begin{verbatim}
+browser.find_element_by_xpath('//*[@id="email_val"]')
+.send_keys('kurniadani@gmail.com')
+browser.find_element_by_id('tgl_lahir').click()
+browser.find_element_by_xpath('//*[@id="ui-datepicker-div"]
+/table/tbody/tr[2]/td[2]').click()
+\end{verbatim}
+
+Hasilnya  di Mozilla Firefox Akan mucul seperti ini :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/5daftar}
+	\caption{Halaman Daftar}
+\end{figure}
