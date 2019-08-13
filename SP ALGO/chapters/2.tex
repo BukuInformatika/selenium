@@ -236,3 +236,51 @@ Hasilnya  di Mozilla Akan mucul seperti ini :
 	\caption{Kayu Sonokeling}
 \end{figure}
 
+\newpage
+\section{Pendaftaran Member}
+Pada tutorial ini membutuhkan file gambar ktp untuk verivikasi data.
+
+Masukan kode dibawah ini yang berfungsi untuk meng-import modul selenium dan time.
+\begin{verbatim}
+from selenium import webdriver
+from time import sleep
+
+browser = webdriver.Chrome()
+web_pht = 'https://www.tokoperhutani.com/'
+
+browser.get(web_pht)
+
+browser.find_element_by_xpath('//*[@id="bannerModal"]/div/div/div[1]/button').click()
+
+\end{verbatim}
+
+Penjelasan:
+\begin{enumerate}
+	\item mengimport modul selenium dan time.
+	\item lalu tahap selanjutnya membuka webdriver chrome / firefox dan membuka link web perhutani.
+	\item karena di halaman landing page web toko perhutani terdapat modal yang menutupi halaman disini kita menutupnya.
+\end{enumerate}
+
+
+Hasilnya tampilan beranda awal website tokoperhutani:
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.425]{figures/1home}
+	\caption{Navigator Pada Menu Beranda}
+\end{figure}
+Masukkan code berikut untuk test masuk menu pendaftaran dengan menekan tombol daftar lalu memilih daftar member :
+\begin{verbatim}
+browser.find_element_by_link_text('Daftar').click()
+sleep(1)
+browser.find_element_by_link_text('Daftar Member').click()
+\end{verbatim}
+
+Hasilnya  di Google Chrome Akan mucul seperti ini :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/3daftar}
+	\caption{Halaman Daftar}
+\end{figure}
+
