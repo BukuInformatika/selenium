@@ -284,3 +284,15 @@ Hasilnya  di Google Chrome Akan mucul seperti ini :
 	\caption{Halaman Daftar}
 \end{figure}
 
+Masukkan code berikut untuk test mengisi form nama dan alamat :
+\begin{verbatim}
+browser.find_element_by_xpath('//*[@id="nama"]').send_keys('Kurnia dani')
+browser.find_element_by_xpath('//*[@id="alamat"]').send_keys('jalan Sariasih no 2')
+\end{verbatim}
+
+Hasilnya akhir pada mozila firefox Akan mucul seperti ini :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/4daftar}
+	\caption{Halaman Daftar}
+\end{figure}
