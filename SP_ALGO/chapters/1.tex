@@ -92,4 +92,133 @@ Hasilnya  di Mozilla Akan mucul seperti ini :
 \includegraphics[scale=0.3]{figures/3hasil.PNG}
 \caption{Navigator Pada Alamat Kantor}
 \end{figure}
+\\
 
+Masukkan code berikut untuk test navigator ke halaman panduan Registrasi:
+\begin{verbatim}
+  browser.find_element_by_link_text('Registrasi').click()
+\end{verbatim}
+
+Hasilnya  di Google Chrome Akan mucul seperti ini :
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{figures/1pdregis}
+\caption{Halaman Panduan Registrasi}
+\end{figure}
+
+Masukkan code berikut untuk test menampilkan pilihan pendaftaran:
+\begin{verbatim}
+  browser.find_element_by_link_text('Daftar').click()
+\end{verbatim}
+
+Hasilnya  di Google Chrome Akan mucul seperti ini :
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{figures/2daftar}
+\caption{Tombol navigasi Daftar}
+\end{figure}
+
+Masukkan code berikut untuk test memilih Daftar member:
+\begin{verbatim}
+  browser.find_element_by_link_text('Daftar Member').click()
+\end{verbatim}
+
+Hasilnya  di Google Chrome Akan mucul seperti ini :
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{figures/3daftar}
+\caption{Halaman Daftar Member}
+\end{figure}
+
+Masukkan code berikut untuk test navigator ke halaman Contact Center:
+\begin{verbatim}
+  browser.find_element_by_link_text('Contact Center').click()
+\end{verbatim}
+
+Hasilnya  di Google Chrome Akan mucul seperti ini :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.3]{figures/4kontak}
+	\caption{Halaman Contact Center}
+\end{figure}
+
+Masukkan code berikut untuk test navigator pada menu Kayu Pinus:
+
+\begin{verbatim}
+  KayuPinus = browser.get('https://tokoperhutani.com/article/detil/kayu-pinus'
+\end{verbatim}
+
+Hasilnya  di Mozilla Akan mucul seperti ini :
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{figures/aa}
+\caption{Kayu Pinus}
+\end{figure}
+
+Masukkan code berikut untuk test navigator pada menu Kayu Gamelina :
+\begin{verbatim}
+  KayuGmelina = browser.get('https://tokoperhutani.com/article/detil/kayu-gmelina'
+\end{verbatim}
+
+Hasilnya  di Mozilla Akan mucul seperti ini :
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{figures/2kg}
+\caption{Kayu Gamelina}
+\end{figure}
+
+Masukkan code berikut untuk test navigator pada menu Kayu Sonokeling :
+\begin{verbatim}
+  KayuSonokeling = browser.get('https://tokoperhutani.com/article/detil/kayu-sonokeling'
+\end{verbatim}
+
+Hasilnya  di Mozilla Akan mucul seperti ini :
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{figures/cc}
+\caption{Kayu Sonokeling}
+\end{figure}
+
+Masukkan code berikut untuk test navigator pada menu Kayu Pinus :
+\begin{verbatim}
+  kayupinus = browser.get('https://www.tokoperhutani.com/article/detil/kayu-pinus')
+\end{verbatim}
+
+Hasilnya  di Mozilla Akan mucul seperti ini :
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{figures/j1}
+\caption{Kayu Pinus}
+\end{figure}
+
+Masukkan code berikut untuk test navigator pada menu Kayu Gmelina :
+\begin{verbatim}
+  kayugmelina  = browser.get('https://www.tokoperhutani.com/article/detil/kayu-gmelina')
+\end{verbatim}
+
+Hasilnya  di Mozilla Akan mucul seperti ini :
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{figures/j2}
+\caption{Kayu Gmelina}
+\end{figure}
+
+Masukkan code berikut untuk test navigator pada menu Kayu Sonokeling :
+\begin{verbatim}
+ kayusonokeling =  browser.get('https://www.tokoperhutani.com/article/detil/kayu-sonokeling')
+\end{verbatim}
+
+Hasilnya  di Mozilla Akan mucul seperti ini :
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{figures/j3}
+\caption{Kayu Sonokeling}
+\end{figure}
+
+\par
+Selanjutnya kami akan mencoba untuk login, kenapa harus ke retail dahulu baru login karena kami mencoba saat di halaman utama tidak bisa terdetect jadi kami mencoba cara lain dengan cara ke retail terlebih dahulu baru bisa untuk login.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{figures/L1}
+\caption{Login}
+\end{figure}
