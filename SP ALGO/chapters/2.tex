@@ -284,3 +284,171 @@ Hasilnya  di Google Chrome Akan mucul seperti ini :
 	\caption{Halaman Daftar}
 \end{figure}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\subsection{Contact Center WA}
+Berikut ini adalah tutorial untuk menghubungi contact center WA. Setelah Login dan Reset Password kita masuk lagi ke halaman utama dengan kode di bawah ini:
+
+\begin{verbatim}
+browser.find_element_by_link_text('Beranda').click()
+\end{verbatim}
+
+Hasilnya  di Google Chrome Akan masuk di halaman beranda seperti ini : 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.28]{figures/3HalUtama}
+	\caption{Halaman Utama/Beranda}
+\end{figure}
+
+Masukkan code berikut untuk test masuk menu contact center dengan mencari link text Contact Center:
+
+\begin{verbatim}
+browser.find_element_by_link_text('Contact Center').click()
+\end{verbatim}
+
+Hasilnya  di Google Chrome Akan masuk di halaman contact center seperti ini : 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.29]{figures/5kontak}
+	\caption{Halaman Contact Center}
+\end{figure}
+
+Masukkan code berikut untuk test membuka link kontak wa:
+
+\begin{verbatim}
+browser.find_element_by_xpath('//*[@id="banner-holder"]
+/div/div/div/ul/li[2]/a').click()
+\end{verbatim}
+
+Hasilnya  di Google Chrome Akan masuk di halaman whatsapp : 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/5linkwa}
+	\caption{Halaman Whatsapp}
+\end{figure}
