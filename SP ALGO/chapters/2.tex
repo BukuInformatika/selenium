@@ -358,3 +358,176 @@ Setelah proses loading selesai maka Login berhasil dan akan muncul tampilan sepe
  	\caption{Login Berhasil}
 \end{figure}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Tutorial Login Dan Melihat NIK KTP Pada Profile}
+Kali ini kami akan membuat tutorial untuk masuk ke akun tokoperhutani.com dan melihat nik KTP pada menu profil.  
+\subsection{Tutorial Login}
+Untuk login pada akun tokoperhutani.com masukkan code berikut pada tools Spyder :
+\begin{verbatim}
+browser.find_element_by_xpath('/html/body/div
+/nav/div/div[2]/ul/li[1]/a/strong').click()
+browser.find_element_by_id('email').send_keys
+('novinurinabb25@gmail.com')
+browser.find_element_by_id('password').send_k
+eys("86083F")
+browser.find_element_by_class_name('le-button
+').click()
+\end{verbatim}
+
+Penjelasan :
+\begin{enumerate}
+	\item Baris pertama untuk mengklik menu login agar form login terbuka
+	\item Baris Kedua untuk mengisikan email pada form login 
+	\item Baris Ketiga untuk mengisi password pada form login
+	\item Baris Keempat untuk mengklik tombol login agar bisa login ke akun yang di inputkan di email dan password.
+\end{enumerate}
+
+Jika login berhasil maka hasilnya akan seperti ini :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/loginn}
+	\caption{Login Berhasil}
+\end{figure}
+
+\newpage
+\subsection{Menemukan NIK KTP Pada Profile}
+Untuk menemukan NIK KTP pada profil masukkan code berikut :
+\begin{verbatim}
+browser.find_element_by_xpath('/html/body/div/nav/div/div[2]
+/ul/strong/li/a').click()
+browser.find_element_by_link_text('Profile').click()
+\end{verbatim}
+
+Penjelasan :
+\begin{enumerate}
+	\item Baris Pertama untuk menampilkan menu pada bar
+	\item Baris Kedua untuk mengklik profile dan menampilkan data dan di dalamnya terdapat NIK
+\end{enumerate}
+
+Hasil running code baris ke 1 :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/caripropil}
+	\caption{Menampilkan Menu Bar Profil}
+\end{figure}
+
+Hasil running code baris ke 2:
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/cari}
+	\caption{Halaman Profil}
+\end{figure}
