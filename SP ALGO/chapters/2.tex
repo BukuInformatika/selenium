@@ -250,7 +250,8 @@ web_pht = 'https://www.tokoperhutani.com/'
 
 browser.get(web_pht)
 
-browser.find_element_by_xpath('//*[@id="bannerModal"]/div/div/div[1]/button').click()
+browser.find_element_by_xpath('//*[@id="bannerModal"]
+/div/div/div[1]/button').click()
 
 \end{verbatim}
 
@@ -284,7 +285,20 @@ Hasilnya  di Google Chrome Akan mucul seperti ini :
 	\caption{Halaman Daftar}
 \end{figure}
 
+Masukkan code berikut untuk test mengisi form nama dan alamat :
+\begin{verbatim}
+  browser.find_element_by_xpath('//*[@id="nama"]')
+  .send_keys('Kurnia dani')
+  browser.find_element_by_xpath('//*[@id="alamat"]')
+  .send_keys('jalan Sariasih no 2')
+\end{verbatim}
 
+Hasilnya akhir pada mozila firefox Akan mucul seperti ini :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.24]{figures/4daftar}
+	\caption{Halaman Daftar}
+\end{figure}
 
 
 
@@ -303,108 +317,94 @@ Hasilnya  di Google Chrome Akan mucul seperti ini :
 
 
 
+\newpage
+\section{Login, Reset Password Dan Menghubungi contact Center WA}
+\subsection{Login}
+Selanjutnya kami akan mencoba untuk melakukan login pada tools degan selenium. 
+Masukkan code berikut untuk menampilkan form login :
+\begin{verbatim}
+content..browser.find_element_by_xpath('/html/body/div/
+nav/div/div[2]/ul/li[1]/a/strong').click().
+\end{verbatim}
 
 
 
+Berikut hasil dari codingan di atas :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.28]{figures/0login}
+	\caption{Halaman Login}
+\end{figure}
 
+kemudian tambahkan code berikut untuk memasukkan email, password dan tombol untuk mengclick login secara otomatis : 
+\begin{verbatim}
+browser.find_element_by_id('email').
+send_keys('nsfthrn@gmail.com')
 
+browser.find_element_by_id('password').
+send_keys("C4CA2F")
 
+browser.find_element_by_class_name('le-button').click() 
+\end{verbatim}
+\newpage
+Kemudian akan muncul proses login seperti berikut :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/1login}
+	\caption{Proses Login}
+\end{figure}
 
+Setelah proses loading selesai maka Login berhasil dan akan muncul tampilan seperti berikut :
+\begin{figure}[h]
+ 	\centering
+ 	\includegraphics[scale=0.25]{figures/2login}
+ 	\caption{Login Berhasil}
+\end{figure}
 
+\newpage
+\subsection{Reset Password}
+Setelah kita login langkah selanjutnya adalah reset password, sebelumnya kita tekan tombol ganti password berikut terlebih dahulu,masukkan code berikut:
 
+\begin{verbatim}
+browser.find_element_by_xpath('/html/body/div/nav/div/div[2]
+/ul/strong/li/a/strong').click()
+\end{verbatim} 
 
+Hasil setelah kita klik tombol Ganti Password adalah sebagai berikut: 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.32]{figures/1GantiPassword}
+	\caption{Halaman Daftar}
+\end{figure}
 
+\newpage
+Setelah kita mengklik tombol ganti password langkah selanjutnya adalah kita mengganti password, langkah nya adalah sebagai berikut, masukkan kodingan berikut: 
+\begin{verbatim}
+browser.find_element_by_xpath('/html/body/div/
+nav/div/div[2]/ul/strong/li/ul/li[2]/a').clicl()
+\end{verbatim} 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Hasil setelah kita klik ganti password adalah sebagai berikut: 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/2GantiPassword}
+	\caption{Halaman Daftar}
+\end{figure}
+
+langkah selanjutnya adalah kita ganti password, masukkan kodingan berikut: 
+\begin{verbatim}
+browser.find_element_by_name('user_pass1').send_keys
+('mifta@22')
+browser.find_element_by_name('user_pass2').send_keys
+('mifta@22')
+\end{verbatim}
+
+Hasil setelah kita mengganti password adalah sebagai berikut: 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/3GantiPassword}
+	\caption{Halaman Daftar}
+\end{figure}
 
 
 
@@ -451,4 +451,64 @@ Hasilnya  di Google Chrome Akan masuk di halaman whatsapp :
 	\centering
 	\includegraphics[scale=0.25]{figures/5linkwa}
 	\caption{Halaman Whatsapp}
+\end{figure}
+
+\newpage
+\section{Tutorial Login Dan Melihat NIK KTP Pada Profile}
+Kali ini kami akan membuat tutorial untuk masuk ke akun tokoperhutani.com dan melihat nik KTP pada menu profil.  
+\subsection{Tutorial Login}
+Untuk login pada akun tokoperhutani.com masukkan code berikut pada tools Spyder :
+\begin{verbatim}
+browser.find_element_by_xpath('/html/body/div
+/nav/div/div[2]/ul/li[1]/a/strong').click()
+browser.find_element_by_id('email').send_keys
+('novinurinabb25@gmail.com')
+browser.find_element_by_id('password').send_k
+eys("86083F")
+browser.find_element_by_class_name('le-button
+').click()
+\end{verbatim}
+
+Penjelasan :
+\begin{enumerate}
+	\item Baris pertama untuk mengklik menu login agar form login terbuka
+	\item Baris Kedua untuk mengisikan email pada form login 
+	\item Baris Ketiga untuk mengisi password pada form login
+	\item Baris Keempat untuk mengklik tombol login agar bisa login ke akun yang di inputkan di email dan password.
+\end{enumerate}
+
+Jika login berhasil maka hasilnya akan seperti ini :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/loginn}
+	\caption{Login Berhasil}
+\end{figure}
+
+\newpage
+\subsection{Menemukan NIK KTP Pada Profile}
+Untuk menemukan NIK KTP pada profil masukkan code berikut :
+\begin{verbatim}
+browser.find_element_by_xpath('/html/body/div/nav/div/div[2]
+/ul/strong/li/a').click()
+browser.find_element_by_link_text('Profile').click()
+\end{verbatim}
+
+Penjelasan :
+\begin{enumerate}
+	\item Baris Pertama untuk menampilkan menu pada bar
+	\item Baris Kedua untuk mengklik profile dan menampilkan data dan di dalamnya terdapat NIK
+\end{enumerate}
+
+Hasil running code baris ke 1 :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/caripropil}
+	\caption{Menampilkan Menu Bar Profil}
+\end{figure}
+
+Hasil running code baris ke 2:
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/cari}
+	\caption{Halaman Profil}
 \end{figure}
