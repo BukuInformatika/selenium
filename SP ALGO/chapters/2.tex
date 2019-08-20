@@ -612,3 +612,62 @@ Setelah kode tersebut dijalankan maka kita akan berada pada halaman profile dan 
 	\caption{Halaman Profil}
 \end{figure}
 
+
+\newpage
+\section{Tutorial Login Dan Menemukan NIK KTP Pada Profile}
+\subsection{Tutorial Login}
+Untuk bisa login pada akun tokoperhutani.com maka kita masukkan code berikut pada tools Spyder :
+\begin{verbatim}
+browser.find_element_by_xpath('/html/body/div
+/nav/div/div[2]/ul/li[1]/a/strong').click()
+browser.find_element_by_id('email').send_keys
+('mifta896@gmail.com')
+browser.find_element_by_id('password').send_k
+eys("mifta@22")
+browser.find_element_by_class_name('le-button
+').click()
+\end{verbatim}
+
+Penjelasan :
+\begin{enumerate}
+	\item Baris pertama untuk mengklik menu login agar form login terbuka
+	\item Baris Kedua untuk mengisikan email pada form login 
+	\item Baris Ketiga untuk mengisi password pada form login
+	\item Baris Keempat untuk mengklik tombol login agar bisa login ke akun yang di inputkan di email dan password.
+\end{enumerate}
+
+Jika login berhasil maka hasilnya akan seperti ini :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/6LOGIN}
+	\caption{Login Berhasil}
+\end{figure}
+
+\newpage
+\subsection{Menemukan NIK KTP Pada Profile}
+Untuk menemukan NIK KTP pada profil masukkan code berikut :
+\begin{verbatim}
+browser.find_element_by_xpath('/html/body/div/nav/div/div[2]
+/ul/strong/li/a').click()
+browser.find_element_by_link_text('Profile').click()
+\end{verbatim}
+
+Penjelasan :
+\begin{enumerate}
+	\item Baris Pertama untuk menampilkan menu pada bar
+	\item Baris Kedua untuk mengklik profile dan menampilkan data dan di dalamnya terdapat NIK
+\end{enumerate}
+
+Hasil running code baris ke 1 :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.28]{figures/1NIK}
+	\caption{Menampilkan Menu Bar Profil}
+\end{figure}
+\newpage
+Hasil running code baris ke 2:
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/2NIK}
+	\caption{Halaman Profil}
+\end{figure}
