@@ -800,8 +800,7 @@ cari = browser.find_element_by_id('i_submit').
 click()
 \end{verbatim}
 
-Hasilnya akan tampak seperti berikut pada tampilan web :
-Hasil running code baris ke 1 :
+Berikut hasil running dari code :
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.25]{figures/jatii}
@@ -821,10 +820,47 @@ Hasilnya akan sebagain berikut :
 \end{figure}
 
 \newpage
-Klik buttom beli sekarang maka otomatis barang akan masuk ke dalam keranjang belanja :
+Tekan beli sekarang maka otomatis barang akan masuk ke dalam keranjang belanja :
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.25]{figures/keranjangg}
+	\includegraphics[scale=0.20]{figures/keranjangg}
 	\caption{Barang Masuk Ke Keranjang}
 \end{figure}
 
+\section{Konfirmasi Pesanan}
+Tutorial selanjutnya yaitu konfirmasi pesanan hingga menerima email pesanan. 
+Masukkan code berikut pada spyder :
+\begin{verbatim}
+lanjut_belanja = browser.find_element_by_xpath('/html
+/body/div[1]/strong/div[5]/div/div/div[3]/a/button').
+click()
+bank_bri = browser.find_element_by_xpath('/
+html/body/div/strong/section[2]/div/div[2]/
+div/div/form/div/ul/li[2]/label/img').click()
+\end{verbatim}
+
+Berikut hasil debug dari code :
+\begin{figure}[h]
+ 	\centering
+ 	\includegraphics[scale=0.29]{figures/bayar}
+ 	\caption{Konfirmasi Pembayaran}
+\end{figure}
+ 
+Kemudian Masukkan code berikut untuk melanjutkan proses:
+\begin{verbatim}
+konfirmasi_pemesanan = browser.find_element_by_xpath('//*
+[@id="confirmOrder"]')
+\end{verbatim}
+Berikut hasil debug dari code: 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/invoicee}
+	\caption{Invoice Pembayaran}
+\end{figure}
+
+Jika proses berhasil akan masuk pesan ke email kita seperti tampilan berikut:
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.30]{figures/emailbayar}
+	\caption{Pesan Email}
+\end{figure}
