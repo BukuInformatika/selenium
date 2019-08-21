@@ -684,8 +684,45 @@ Maka akan menjalankan kode baris ke 2:
 \end{figure}
 
 \newpage
-\section{Tutorial Mencari Jenis Kayu Jati dan Konfirmasi Pesanan }
+\subsection {Mencari Jenis Kayu Jati dan Memasukkannya ke Keranjang Pembelian}
+Langkah yang perlu dilakukan adalah, masukkan kode berikut di spyder :
+\begin{verbatim}
+browser=webdriver.Firefox(options=opsi,capabilities=cap,firefox_binary=binary)
+browser.get('https://www.tokoperhutani.com/filter/field/c04a3f05d53cdf8f8ac5cf643ba2504bd2f46bd0bb9a60877d640d51d96a6af5#')
+\end{verbatim}
 
+Sehingga akan diarahkan ke Pembelian Kayu Jati. Dan langkah berikutya adalah memilih jenis Kayu Jatinya dan memasukkannya kedalam keranjang pembelian. Seperti screenshot di bawah ini.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/T5_cart}
+	\caption{Keranjang Pembelian}
+\end{figure}
+
+\newpage
+\subsection {Melakukan Konfirmasi Pemesanan}
+Untuk melakukan konfirmasi Pemesanan, pertama jalankan dahulu kode berikut :
+\begin{verbatim}
+browser=webdriver.Firefox(options=opsi,capabilities=cap,firefox_binary=binary)
+browser.get('https://www.tokoperhutani.com/member/order')
+\end{verbatim}
+
+Maka akan diarahkan ke Menu Konfirmasi Pemesanan yang terdapat pada Inbox akun.
+Gambar dibawah merupakan konfirmasi ppemesanan Kayu Jati
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/T6_1}
+	\caption{Konfirmasi Pemesanan Kayu Jati}
+\end{figure}
+
+Gambar dibawah merupakan screenshot untuk
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/T6_2}
+	\caption{Email Pemesanan Kayu Jati}
+\end{figure}
+
+\newpage
+\section{Tutorial Mencari Jenis Kayu Jati dan Konfirmasi Pesanan }
 \subsection{Tutorial Mencari Jenis Kayu Jati}
 Berikut adalah tutorial untuk mencari Kayu Jati Dan memasukkan ke keranjang. Masukkan code berikut ini pada spyder:
 \begin{verbatim}
