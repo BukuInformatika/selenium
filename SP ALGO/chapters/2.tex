@@ -1,6 +1,4 @@
 
-
-
 \section{Perintah Navigasi}
 Sebelum melakukan perintah navigasi pastikan kita memiliki tools Spyder, anaconda dan selenium. Lakukan instalasi selenium dengan cara ketik "pip install selenium" pada anaconda.
 
@@ -251,6 +249,9 @@ web_pht = 'https://www.tokoperhutani.com/'
 browser.get(web_pht)
 
 browser.find_element_by_xpath('//*[@id="bannerModal"]/div/div/div[1]/button').click()
+browser.find_element_by_xpath('//*[@id="bannerModal"]
+/div/div/div[1]/button').click()
+browser.find_element_by_xpath('//*[@id="bannerModal"]/div/div/div[1]/button').click()
 
 \end{verbatim}
 
@@ -288,37 +289,37 @@ Masukkan code berikut untuk test mengisi form nama dan alamat :
 \begin{verbatim}
 browser.find_element_by_xpath('//*[@id="nama"]').send_keys('Kurnia dani')
 browser.find_element_by_xpath('//*[@id="alamat"]').send_keys('jalan Sariasih no 2')
+  browser.find_element_by_xpath('//*[@id="nama"]')
+  .send_keys('Kurnia dani')
+  browser.find_element_by_xpath('//*[@id="alamat"]')
+  .send_keys('jalan Sariasih no 2')
+browser.find_element_by_xpath('//*[@id="nama"]').send_keys('Kurnia dani')
+browser.find_element_by_xpath('//*[@id="alamat"]').send_keys('jalan Sariasih no 2')
 \end{verbatim}
 
-Hasilnya akhir pada mozila firefox Akan mucul seperti ini :
+Hasilnya akhir pada mozila firefox Akan mucul seperti ini:
 \begin{figure}[h]
 	\centering
+	\includegraphics[scale=0.25]{figures/4daftar}
+	\includegraphics[scale=0.24]{figures/4daftar}
 	\includegraphics[scale=0.25]{figures/4daftar}
 	\caption{Halaman Daftar}
 \end{figure}
 
+Apabila telah selesai melakukan pendaftaran, selanjutnya user akan dialihkan ke halaman ganti passwod.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Hasilnya di Website akan muncul seperti gambar dibawah ini :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/T2Login}
+	\caption{Halaman Ganti Password}
+\end{figure}
 
 \newpage
-\section{Login, Reset Password Dan Menghubungi contact Center WA}
+\section{Reset Password, Login Dan Menghubungi Contact Person di WA WA}
 \subsection{Login}
-Selanjutnya kami akan mencoba untuk melakukan login pada tools degan selenium. 
-Masukkan code berikut untuk menampilkan form login :
+Selanjutnya kita akan mencoba untuk melakukan login pada tool dengan selenium. 
+Masukkan kode berikut untuk menampilkan form login:
 \begin{verbatim}
 content..browser.find_element_by_xpath('/html/body/div/
 nav/div/div[2]/ul/li[1]/a/strong').click().
@@ -326,14 +327,16 @@ nav/div/div[2]/ul/li[1]/a/strong').click().
 
 
 
-Berikut hasil dari codingan di atas :
+Berikut hasil dari codingan di atas:
 \begin{figure}[h]
 	\centering
+	\includegraphics[scale=0.20]{figures/0login}
+	\includegraphics[scale=0.28]{figures/0login}
 	\includegraphics[scale=0.20]{figures/0login}
 	\caption{Halaman Login}
 \end{figure}
 
-kemudian tambahkan code berikut untuk memasukkan email, password dan tombol untuk mengclick login secara otomatis : 
+kemudian tambahkan kode berikut untuk memasukkan email, password dan tombol untuk mengclick login secara otomatis: 
 \begin{verbatim}
 browser.find_element_by_id('email').
 send_keys('nsfthrn@gmail.com')
@@ -344,139 +347,33 @@ send_keys("C4CA2F")
 browser.find_element_by_class_name('le-button').click() 
 \end{verbatim}
 \newpage
-Kemudian akan muncul proses login seperti berikut :
+Kemudian akan muncul proses login seperti berikut:
 \begin{figure}[h]
 	\centering
+	\includegraphics[scale=0.21]{figures/1login}
+	\includegraphics[scale=0.25]{figures/1login}
 	\includegraphics[scale=0.21]{figures/1login}
 	\caption{Proses Login}
 \end{figure}
 
-Setelah proses loading selesai maka Login berhasil dan akan muncul tampilan seperti berikut :
+Setelah proses loading selesai maka Login berhasil dan akan muncul tampilan seperti berikut:
 \begin{figure}[h]
  	\centering
  	\includegraphics[scale=0.20]{figures/2login}
  	\caption{Login Berhasil}
 \end{figure}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\begin{figure}
+ 	\includegraphics[scale=0.25]{figures/2login}
+ 	\includegraphics[scale=0.20]{figures/2login}
+ 	\caption{Login Berhasil}
+\end{figure}
 
 
 \newpage
-\section{Tutorial Login Dan Melihat NIK KTP Pada Profile}
-Kali ini kami akan membuat tutorial untuk masuk ke akun tokoperhutani.com dan melihat nik KTP pada menu profil.  
+\section{Cara Login Dan Melihat NIK KTP Pada Profil}
+Kali ini kita akan membuat langkah-langkah untuk masuk ke akun tokoperhutani.com dan melihat nik KTP pada menu profil.  
 \subsection{Tutorial Login}
-Untuk login pada akun tokoperhutani.com masukkan code berikut pada tools Spyder :
+Untuk login pada akun tokoperhutani.com masukkan kode berikut pada tool Spyder:
 \begin{verbatim}
 browser.find_element_by_xpath('/html/body/div
 /nav/div/div[2]/ul/li[1]/a/strong').click()
@@ -488,44 +385,37 @@ browser.find_element_by_class_name('le-button
 ').click()
 \end{verbatim}
 
-Penjelasan :
+Penjelasan:
 \begin{enumerate}
-	\item Baris pertama untuk mengklik menu login agar form login terbuka
-	\item Baris Kedua untuk mengisikan email pada form login 
-	\item Baris Ketiga untuk mengisi password pada form login
+	\item Baris pertama untuk mengklik menu login agar form login terbuka.
+	\item Baris Kedua untuk mengisikan email pada form login. 
+	\item Baris Ketiga untuk mengisi password pada form login.
 	\item Baris Keempat untuk mengklik tombol login agar bisa login ke akun yang di inputkan di email dan password.
 \end{enumerate}
 
-Jika login berhasil maka hasilnya akan seperti ini :
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.25]{figures/loginn}
-	\caption{Login Berhasil}
-\end{figure}
-
 \newpage
-\subsection{Menemukan NIK KTP Pada Profile}
-Untuk menemukan NIK KTP pada profil masukkan code berikut :
+\subsection{Mencari NIK KTP Pada Profile}
+Untuk mencari dan menemukan NIK KTP pada profil, masukkan code berikut :
 \begin{verbatim}
 browser.find_element_by_xpath('/html/body/div/nav/div/div[2]
 /ul/strong/li/a').click()
 browser.find_element_by_link_text('Profile').click()
 \end{verbatim}
 
-Penjelasan :
+Penjelasan:
 \begin{enumerate}
 	\item Baris Pertama untuk menampilkan menu pada bar
-	\item Baris Kedua untuk mengklik profile dan menampilkan data dan di dalamnya terdapat NIK
+	\item Baris Kedua untuk meng-klik profil dan menampilkan data dan di dalamnya terdapat NIK
 \end{enumerate}
 
-Hasil running code baris ke 1 :
+Hasil dari menjalankan code baris ke 1:
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.25]{figures/caripropil}
 	\caption{Menampilkan Menu Bar Profil}
 \end{figure}
 
-Berikut hasil debug dari code baris kedua:
+Hasil menjalankan code baris ke 2:
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.25]{figures/cari}
