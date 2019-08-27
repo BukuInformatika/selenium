@@ -916,3 +916,195 @@ Hasilnya maka akan dialihkan ke halaman invoice berikut ini:
 \end{figure}
 
 Jika proses berhasil akan masuk pesan mengenai informasi pembayaran ke email kita.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\subsection{Tutorial Mengambil Data Dari Tabel Kayu Yang Dijual}
+Pada kali ini kita akan mengambil data dari tabel kayu yang dijual, untuk mendapatkan data masukkan code berikut, code ini berfungsi umtuk mencari kayu yang dijual disini saya mencari jenis kayu jati :
+\begin{verbatim}
+browser.get('https://tokoperhutani.com/beranda')
+browser.find_element_by_id('wilayah').click()
+browser.find_element_by_xpath('//*[@id="wilayah"]
+/option[4]').click()
+browser.find_element_by_id('kota').click()
+browser.find_element_by_xpath('//*[@id="kota"]/
+option[3]').click()
+browser.find_element_by_id('select_kota').click()
+browser.find_element_by_xpath('//*[@id="select_
+kota"]/option[3]').click()
+browser.find_element_by_id('i_submit').click()
+\end{verbatim}
+Berikut Hasil dari eksekusi codenya :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.3]{figures/caridatakayu}
+	\caption{Cari Data Kayu}
+\end{figure}
+
+Kemudian untuk mengambil data dari tabel kayu yang dijual masukkan code sebagai berikut :
+\begin{verbatim}
+ketersediaan = browser.find_element_by_xpath
+('/html/body/div/div[8]/div/div/form/div/div
+[3]/div[2]/table/tbody/tr[1]/td[2]/span')
+print('Ketersediaan: ',ketersediaan.text)
+no_kapling = browser.find_element_by_xpath
+('/html/body/div/div[8]/div/div/form/div/
+div[3]/div[2]/table/tbody/tr[1]/td[3]/a')
+print('No Kapling: ',no_kapling.text)
+harga_awal_rp = browser.find_element_by_xpath
+('/html/body/div/div[8]/div/div/form/div/div
+[3]/div[2]/table/tbody/tr[1]/td[4]/div')
+print('Harga Awal Rp: ',harga_awal_rp.text)
+dif = browser.find_element_by_xpath('/html
+/body/div/div[8]/div/div/form/div/div[3]/d
+iv[2]/table/tbody/tr[1]/td[5]')
+print('Dif: ',dif.text)
+total_dif_rp = browser.find_element_by_xpath
+('/html/body/div/div[8]/div/div/form/div/div
+[3]/div[2]/table/tbody/tr[1]/td[6]')
+print('Total Dif RP: ',total_dif_rp.text)
+harga_akhir_rp = browser.find_element_by_xpath
+('/html/body/div/div[8]/div/div/form/div/div
+[3]/div[2]/table/tbody/tr[1]/td[7]/span')
+print('Harga Akhir RP: ',harga_akhir_rp.text)
+jenis_kayu = browser.find_element_by_xpath
+('/html/body/div/div[8]/div/div/form/div/
+div[3]/div[2]/table/tbody/tr[1]/td[9]')
+print('Jenis Kayu: ',jenis_kayu.text)
+sortimen = browser.find_element_by_xpath
+('/html/body/div/div[8]/div/div/form/div/
+div[3]/div[2]/table/tbody/tr[1]/td[10]')
+print('Sortimen: ',sortimen.text)
+panjang = browser.find_element_by_xpath
+('/html/body/div/div[8]/div/div/form/div
+/div[3]/div[2]/table/tbody/tr[1]/td[11]')
+print('Panjang: ',panjang.text)
+lebar = browser.find_element_by_xpath
+('/html/body/div/div[8]/div/div/form/div
+/div[3]/div[2]/table/tbody/tr[1]/td[12]')
+print('Lebar: ',lebar.text)
+tebal_atau_diameter = browser.find_element_by_xpath
+('/html/body/div/div[8]/div/div/form/div/div
+[3]/div[2]/table/tbody/tr[1]/td[13]')
+print('Tebal Atau Diameter: ',tebal_atau_diameter.text)
+mutu = browser.find_element_by_xpath
+('/html/body/div/div[8]/div/div/form/div/
+div[3]/div[2]/table/tbody/tr[1]/td[14]')
+print('Mutu: ',mutu.text)
+jumlah = browser.find_element_by_xpath
+('/html/body/div/div[8]/div/div/form/
+div/div[3]/div[2]/table/tbody/tr[1]/td[15]')
+print('Jumlah: ',jumlah.text)
+status = browser.find_element_by_xpath
+('/html/body/div/div[8]/div/div/form/
+div/div[3]/div[1]/div/table/thead/tr/th[16]')
+print('Status: ',status.text)
+cacat_kayu = browser.find_element_by_xpath
+('/html/body/div/div[8]/div/div/form/div/
+div[3]/div[2]/table/tbody/tr[1]/td[18]')
+print('Cacat Kayu: ',cacat_kayu.text)
+jenis_tebangan = browser.find_element_by_xpath
+('/html/body/div/div[8]/div/div/form/div/div
+[3]/div[2]/table/tbody/tr[1]/td[19]')
+print('Jenis Tebangan: ',jenis_tebangan.text)
+usia_tayang_kapling = browser.find_element_by_xpath
+('/html/body/div/div[8]/div/div/form/div/div[3]
+/div[2]/table/tbody/tr[1]/td[20]')
+print('Usia Tayang Kapling: ',usia_tayang_kapling.text)
+tahun_kapling = browser.find_element_by_xpath
+('/html/body/div/div[8]/div/div/form/div
+/div[3]/div[2]/table/tbody/tr[1]/td[21]')
+print('Tahun Kapling: ',tahun_kapling.text)
+tahun_produksi = browser.find_element_by_xpath
+('/html/body/div/div[8]/div/div/form/div/div
+[3]/div[2]/table/tbody/tr[1]/td[22]')
+print('Tahun Produksi: ',tahun_produksi.text)
+\end{verbatim}
+Hasilnya data yang didapat akan di tampikan di spyder dengan tampilan sebagai berikut :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.6]{figures/mendapatdatakayu}
+	\caption{Mendapat Data Kayu}
+\end{figure}
+
+\subsection{Tutorial Mengambil Data Dari Tabel Pesanan Di Menu User}
+Pada kali ini kita akan melakukan tutorial mengambil data dari tabel pesanan di menu user. Untuk mendapatkan data pesanan masukkan code berikut, code ini berfungsi untuk masuk ke user dan menampilkan data pesanan :
+\begin{verbatim}
+browser.find_element_by_xpath('/html/body/div/nav/div/div[2]
+/ul/strong/li/a').click()
+browser.find_element_by_link_text('Pesanan').click()
+\end{verbatim}
+
+Hasil eksekusi code adalah sebagai berikut :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.3]{figures/datapesanan}
+	\caption{Masuk Ke Menu Pemesanan}
+\end{figure}
+
+Kemudian untuk menganbil data dari tabel pemesanan di user masukkan code sebagai berikut :
+\begin{verbatim}
+tanggal_pesan = browser.find_element_by_xpath
+('/html/body/div/strong/div[6]/div[2]/section
+[2]/div/div/div[1]/form/div/div[3]/div[2]/table
+/tbody/tr/td[1]')
+print('Tanggal Pesanan: ',tanggal_pesan.text)
+invoice = browser.find_element_by_xpath('/html
+/body/div/strong/div[6]/div[2]/section[2]/div/
+div/div[1]/form/div/div[3]/div[2]/table/tbody/
+tr/td[2]')
+print('Invoice: ',invoice.text)
+lokasi = browser.find_element_by_xpath
+('/html/body/div/strong/div[6]/div[2]/section
+[2]/div/div/div[1]/form/div/
+div[3]/div[2]/table/tbody/tr/td[3]')
+print('Lokasi: ',lokasi.text)
+volume = browser.find_element_by_xpath
+('/html/body/div/strong/div[6]/div[2]/
+section[2]/div/div/div[1]/form/div/div[3]/div
+[2]/table/tbody/tr/td[4]')
+print('Voume: ',volume.text)
+total_harga_rp = browser.find_element_by_xpath
+('/html/body/div/strong/div[6]/div[2]/section
+[2]/div/div/div[1]/form/div/div[3]/div[2]/
+table/tbody/tr/td[5]')
+print('Total Harga: ',total_harga_rp.text)
+saluran_bayar = browser.find_element_by_xpath
+('/html/body/div/strong/div[6]/div[2]/section
+[2]/div/div/div[1]/form/div/div[3]
+/div[2]/table/tbody/tr/td[6]')
+print('Saluran Bayar: ',saluran_bayar.text)
+\end{verbatim}
+Hasilnya data yang didapat akan di tampikan di spyder dengan tampilan sebagai berikut :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.6]{figures/mengambildatapesanan}
+	\caption{Data Pesanan Yang Diambil}
+\end{figure}
+
