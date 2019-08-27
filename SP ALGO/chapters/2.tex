@@ -971,9 +971,190 @@ element_by_xpath('//*[@id="confirmOrder"]')
 \end{verbatim}
 
 \newpage
-Maka hasilnya akan sebagai berikut setelah masuk ke email masing masing untuk menunggu pembayaran
+Maka hasilnya akan sebagai berikut setelah masuk 
+ke email masing masing untuk menunggu pembayaran
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.25]{figures/email1}
 	\caption{Halaman pemesanan}
+\end{figure}
+
+
+\newpage
+\subsection{Melakukan Pengambilan data dari tabel kayu yang dijual}
+Berikut adalah pengambilan data dari tabel kayu 
+yang dijual oleh toko perhutani, terlebih dahulu 
+kita masukkan kodingan berikut ini:
+\begin{verbatim}
+browser.find_element_by_id('wilayah').click()
+browser.find_element_by_xpath('//*[@id="wilayah"]/
+option[4]').click()
+sleep(2)
+browser.find_element_by_id('kota').click()
+browser.find_element_by_xpath('//*[@id="kota"]/
+option[3]').click()
+sleep(2)
+browser.find_element_by_id('select_kota').click()
+browser.find_element_by_xpath('//*[@id="select_kota"]/
+option[3]').click()
+sleep(2)
+browser.find_element_by_id('i_submit').click()
+
+sleep(5)
+ketersediaan = browser.find_element_by_xpath('/html/
+body/div/strong/div[8]/div/div/form/div/div[3]/div[2]
+/table/tbody/tr[2]/td[2]/span')print('ketersediaan:
+',ketersediaan.text)
+
+no_kapling = browser.find_element_by_xpath('/html/body/
+div/strong/div[8]/div/div/form/div/div[3]/div[2]/table/
+tbody/tr[2]/td[3]/a')print('no_kapling: ',no_kapling.
+text)
+
+harga_awal = browser.find_element_by_xpath('/html/body/
+div/strong/div[8]/div/div/form/div/div[3]/div[2]/table/
+tbody/tr[2]/td[4]/div')print('harga_awal: ',harga_awal.
+text)
+
+total_dif = browser.find_element_by_xpath('/html/body/
+div/strong/div[8]/div/div/form/div/div[3]/div[2]/table/
+tbody/tr[2]/td[6]')print('total_dif: ',total_dif.text)
+
+harga_akhir = browser.find_element_by_xpath('/html/body/
+div/strong/div[8]/div/div/form/div/div[3]/div[2]/table/
+tbody/tr[2]/td[7]/span')print('harga_akhir: ',
+harga_akhir.text)
+
+jenis_kayu = browser.find_element_by_xpath('/html/body/
+div/strong/div[8]/div/div/form/div/div[3]/div[2]/table/
+tbody/tr[2]/td[9]')print('jenis_kayu: ',jenis_kayu.text)
+
+tahun_produksi = browser.find_element_by_xpath('/html/
+body/div/strong/div[8]/div/div/form/div/div[3]/div[2]/
+table/tbody/tr[2]/td[22]')print('tahun_produksi: ',
+tahun_produksi.text)
+
+tahun_kapling = browser.find_element_by_xpath('/html/
+body/div/strong/div[8]/div/div/form/div/div[3]/div[2]/
+table/tbody/tr[2]/td[21]')print('tahun_kapling: ',
+tahun_kapling.text)
+
+usia_tayang_kapling = browser.find_element_by_xpath
+('/html/body/div/strong/div[8]/div/div/form/div/
+div[3]/div[2]/table/tbody/tr[2]/td[20]')print
+('usia_tayang_kapling: ',usia_tayang_kapling.text)
+
+jenis_tebangan = browser.find_element_by_xpath
+('/html/body/div/strong/div[8]/div/div/form/
+div/div[3]/div[2]/table/tbody/tr[2]/td[19]')
+print('jenis_tebangan: ',jenis_tebangan.text)
+
+cacat_kayu = browser.find_element_by_xpath
+('/html/body/div/strong/div[8]/div/div/
+form/div/div[3]/div[2]/table/tbody/tr[2]/
+td[18]')print('cacat_kayu: ',cacat_kayu.text)
+
+status = browser.find_element_by_xpath
+('/html/body/div/strong/div[8]/div/div/
+form/div/div[3]/div[2]/table/tbody/tr[2]/
+td[17]')
+print('status: ',status.text)
+
+volume = browser.find_element_by_xpath
+('/html/body/div/strong/div[8]/div/div/
+form/div/div[3]/div[2]/table/tbody/tr
+[2]/td[16]')print('volume: ',volume.text)
+
+jumlah = browser.find_element_by_xpath
+('/html/body/div/strong/div[8]/div/div/
+form/div/div[3]/div[2]/table/tbody/tr
+[2]/td[15]')print('jumlah: ',jumlah.text)
+
+mutu = browser.find_element_by_xpath
+('/html/body/div/strong/div[8]/div/
+div/form/div/div[3]/div[2]/table/tbody/
+tr[2]/td[14]')print('mutu: ',mutu.text)
+
+panjang = browser.find_element_by_xpath
+('/html/body/div/strong/div[8]/div/div/
+form/div/div[3]/div[2]/table/tbody/tr
+[2]/td[11]')print('panjang: ',panjang.text)
+\end{verbatim}
+
+Hasil setelah dijalankan adalah :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/1tabelkayu}
+	\caption{Halaman pengambilan data dari tabel kayu}
+\end{figure}
+
+Hasil setelah dijalankan adalah :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.6]{figures/2tabelkayu}
+	\caption{Halaman hasil pengambilan data dari tabel kayu}
+\end{figure}
+
+\newpage
+\subsection{Melakukan Pengambilan Data dari Tabel Pesanan di Menu User}
+Untuk mendapatkan data pesanan kita masukkan code berikut ini :
+\begin{verbatim}
+browser.find_element_by_xpath('/html/body/
+div/nav/div/div[2]/ul/strong/li/a').click()
+browser.find_element_by_link_text('Pesanan')
+.click()
+\end{verbatim}
+
+Hasil eksekusi code adalah sebagai berikut :
+Hasil setelah dijalankan adalah :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/1tabelpesanan}
+	\caption{Halaman pengambilan data dari tabel pesanan}
+\end{figure}
+
+untuk mengambil data pemesanan  maka masukkan kode berikut ini :
+\begin{verbatim}
+tanggal_pesan = browser.find_element_by_xpath
+('/html/body/div/strong/div[6]/div[2]/section
+[2]/div/div/div[1]/form/div/div[3]/div[2]/
+table/tbody/tr/td[1]')print('Tanggal Pesanan:
+',tanggal_pesan.text)
+invoice = browser.find_element_by_xpath
+('/html/body/div/strong/div[6]/div[2]/
+section[2]/div/div/div[1]/form/div/div
+[3]/div[2]/table/tbody/tr/td[2]')
+print('Invoice: ',invoice.text)
+lokasi = browser.find_element_by_xpath
+('/html/body/div/strong/div[6]/div[2]
+/section[2]/div/div/div[1]/form/div/
+div[3]/div[2]/table/tbody/tr/td[3]')
+print('Lokasi: ',lokasi.text)
+volume = browser.find_element_by_xpath
+('/html/body/div/strong/div[6]/div[2]
+/section[2]/div/div/div[1]/form/div
+/div[3]/div[2]/table/tbody/tr/td[4]')
+print('Voume: ',volume.text)
+total_harga_rp = browser.find_element_
+by_xpath('/html/body/div/strong/div
+[6]/div[2]/section[2]/div/div/div[1]
+/form/div/div[3]/div[2]/table/tbody/
+tr/td[5]')print('Total Harga: ',total
+_harga_rp.text)
+saluran_bayar = browser.find_element
+_by_xpath('/html/body/div/strong/
+div[6]/div[2]/section[2]/div/div/
+div[1]/form/div/div[3]/div[2]/table/
+tbody/tr/td[6]')
+print('Saluran Bayar: ',saluran_bayar
+.text)
+\end{verbatim}
+
+Berikut ini adalah Hasil data yang didapat 
+akan di tampikan di spyder dengan tampilan sebagai berikut :
+Hasil setelah dijalankan adalah :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.6]{figures/2tabelpesanan}
+	\caption{Halaman data dari tabel pesanan}
 \end{figure}
