@@ -248,10 +248,8 @@ web_pht = 'https://www.tokoperhutani.com/'
 
 browser.get(web_pht)
 
-browser.find_element_by_xpath('//*[@id="bannerModal"]/div/div/div[1]/button').click()
 browser.find_element_by_xpath('//*[@id="bannerModal"]
 /div/div/div[1]/button').click()
-browser.find_element_by_xpath('//*[@id="bannerModal"]/div/div/div[1]/button').click()
 
 \end{verbatim}
 
@@ -287,33 +285,36 @@ Hasilnya  di Google Chrome Akan mucul seperti ini :
 
 Masukkan code berikut untuk test mengisi form nama dan alamat :
 \begin{verbatim}
-browser.find_element_by_xpath('//*[@id="nama"]').send_keys('Kurnia dani')
-browser.find_element_by_xpath('//*[@id="alamat"]').send_keys('jalan Sariasih no 2')
-  browser.find_element_by_xpath('//*[@id="nama"]')
-  .send_keys('Kurnia dani')
-  browser.find_element_by_xpath('//*[@id="alamat"]')
-  .send_keys('jalan Sariasih no 2')
-browser.find_element_by_xpath('//*[@id="nama"]').send_keys('Kurnia dani')
-browser.find_element_by_xpath('//*[@id="alamat"]').send_keys('jalan Sariasih no 2')
+browser.find_element_by_xpath('//*[@id="nama"]')
+.send_keys('Kurnia dani')
+browser.find_element_by_xpath('//*[@id="alamat"]')
+.send_keys('jalan Sariasih no 2')
+browser.find_element_by_xpath('//*[@id="email_val"]')
+.send_keys('kurniadani@gmail.com')
+browser.find_element_by_id('tgl_lahir').click()
+browser.find_element_by_xpath('//*[@id="ui-datepicker-div"]
+/table/tbody/tr[2]/td[2]').click()
+browser.find_element_by_xpath('//*[@id="hp"]')
+.send_keys('628123245343')
+browser.find_element_by_xpath('//*[@id="no_ktp"]')
+.send_keys('33101212822220005')
+browser.find_element_by_xpath('//*[@id="tippe"]
+/option[3]').click()
+browser.find_element_by_xpath('//*[@id="checklist"]')
+.click()
+browser.find_element_by_xpath('//*[@id="i_submit"]')
+.click()
 \end{verbatim}
 
+\newpage
 Hasilnya akhir pada mozila firefox Akan mucul seperti ini:
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.25]{figures/4daftar}
 	\includegraphics[scale=0.24]{figures/4daftar}
-	\includegraphics[scale=0.25]{figures/4daftar}
 	\caption{Halaman Daftar}
 \end{figure}
 
-Apabila telah selesai melakukan pendaftaran, selanjutnya user akan dialihkan ke halaman ganti passwod.
-
-Hasilnya di Website akan muncul seperti gambar dibawah ini :
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.25]{figures/T2Login}
-	\caption{Halaman Ganti Password}
-\end{figure}
+Apabila telah selesai melakukan pendaftaran, selanjutnya akan ada verifikasi dari pihak Tokoperhutani sehari setelah pendaftaran dilakukan.
 
 \newpage
 \section{Reset Password, Login Dan Menghubungi Contact Person di WA WA}
@@ -330,8 +331,6 @@ nav/div/div[2]/ul/li[1]/a/strong').click().
 Berikut hasil dari codingan di atas:
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.20]{figures/0login}
-	\includegraphics[scale=0.28]{figures/0login}
 	\includegraphics[scale=0.20]{figures/0login}
 	\caption{Halaman Login}
 \end{figure}
@@ -351,8 +350,6 @@ Kemudian akan muncul proses login seperti berikut:
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.21]{figures/1login}
-	\includegraphics[scale=0.25]{figures/1login}
-	\includegraphics[scale=0.21]{figures/1login}
 	\caption{Proses Login}
 \end{figure}
 
@@ -362,12 +359,97 @@ Setelah proses loading selesai maka Login berhasil dan akan muncul tampilan sepe
  	\includegraphics[scale=0.20]{figures/2login}
  	\caption{Login Berhasil}
 \end{figure}
-\begin{figure}
- 	\includegraphics[scale=0.25]{figures/2login}
- 	\includegraphics[scale=0.20]{figures/2login}
- 	\caption{Login Berhasil}
+
+\newpage
+\subsection{Reset Password}
+Setelah kita login langkah selanjutnya adalah reset password, sebelumnya kita tekan tombol ganti password berikut terlebih dahulu,masukkan code berikut:
+
+\begin{verbatim}
+browser.find_element_by_xpath('/html/body/div/nav/div/div[2]
+/ul/strong/li/a/strong').click()
+\end{verbatim} 
+
+Hasil setelah kita klik tombol Ganti Password adalah sebagai berikut: 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.32]{figures/1GantiPassword}
+	\caption{Halaman Utama}
 \end{figure}
 
+
+Setelah kita mengklik tombol ganti password langkah selanjutnya adalah kita mengganti password, langkah nya adalah sebagai berikut, masukkan kodingan berikut: 
+\begin{verbatim}
+browser.find_element_by_xpath('/html/body/div/
+nav/div/div[2]/ul/strong/li/ul/li[2]/a').clicl()
+\end{verbatim} 
+
+\newpage
+Hasil setelah kita klik ganti password adalah sebagai berikut: 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/2GantiPassword}
+	\caption{Halaman Reset Password}
+\end{figure}
+
+langkah selanjutnya adalah kita ganti password, masukkan kodingan berikut: 
+\begin{verbatim}
+browser.find_element_by_name('user_pass1').send_keys
+('mifta@22')
+browser.find_element_by_name('user_pass2').send_keys
+('mifta@22')
+\end{verbatim}
+
+Hasil setelah kita mengganti password adalah sebagai berikut: 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/3GantiPassword}
+	\caption{Halaman Reset Password}
+\end{figure}
+
+\newpage
+\subsection{Contact Center WA}
+Berikut ini adalah tutorial untuk menghubungi contact center WA. Setelah Login dan Reset Password kita masuk lagi ke halaman utama dengan kode di bawah ini:
+
+\begin{verbatim}
+browser.find_element_by_link_text('Beranda').click()
+\end{verbatim}
+
+Hasilnya  di Google Chrome Akan masuk di halaman beranda seperti ini : 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.28]{figures/3HalUtama}
+	\caption{Halaman Utama/Beranda}
+\end{figure}
+
+Masukkan code berikut untuk test masuk menu contact center dengan mencari link text Contact Center:
+
+\begin{verbatim}
+browser.find_element_by_link_text('Contact Center').click()
+\end{verbatim}
+
+Hasilnya  di Google Chrome Akan masuk di halaman contact center seperti ini : 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.29]{figures/5kontak}
+	\caption{Halaman Contact Center}
+\end{figure}
+
+Masukkan code berikut untuk test membuka link kontak wa:
+
+\begin{verbatim}
+browser.find_element_by_xpath('//*[@id="banner-holder"]
+/div/div/div/ul/li[2]/a').click()
+\end{verbatim}
+
+Hasilnya  di Google Chrome Akan masuk di halaman whatsapp : 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/5linkwa}
+	\caption{Halaman Whatsapp}
+\end{figure}
 
 \newpage
 \section{Cara Login Dan Melihat NIK KTP Pada Profil}
@@ -394,7 +476,7 @@ Penjelasan:
 \end{enumerate}
 
 \newpage
-\subsection{Mencari NIK KTP Pada Profile}
+\subsection{Mencari NIK KTP Pada Profil}
 Untuk mencari dan menemukan NIK KTP pada profil, masukkan code berikut :
 \begin{verbatim}
 browser.find_element_by_xpath('/html/body/div/nav/div/div[2]
@@ -422,9 +504,163 @@ Hasil menjalankan code baris ke 2:
 	\caption{Halaman Profil}
 \end{figure}
 
+\newpage
+\subsection{Tutorial Login 2}
+Untuk login pada akun tokoperhutani.com kita memerlukan informasi akun seperti email dan password lalu masukkan code berikut:
+\begin{verbatim}
+browser.get('https://www.tokoperhutani.com/')
+
+browser.find_element_by_xpath('//*[@id="bannerModal"]
+/div/div/div[1]/button').click()
+
+browser.find_element_by_xpath('/html/body/div
+/nav/div/div[2]/ul/li[1]/a/strong').click()
+
+browser.find_element_by_id('email')
+.send_keys('dindaayuprtw@gmail.com')
+
+browser.find_element_by_id('password')
+.send_keys("5BF5DF")
+
+browser.find_element_by_class_name('le-button
+').click()
+\end{verbatim}
+
+Penjelasan :
+\begin{enumerate}
+	\item Baris pertama untuk membuka halaman utama toko perhutani
+	\item Baris kedua untuk mengklik tombol X pada modal
+	\item Baris ketiga untuk mengklik menu login agar form login terbuka
+	\item Baris Keempat untuk mengisikan email pada form login 
+	\item Baris Kelima untuk mengisi password pada form login
+	\item Baris Keenam untuk mengklik tombol login agar bisa login ke akun.
+\end{enumerate}
 
 \newpage
-\subsection {Menemukan NIK KTP pada Menu Profile}
+Proses login akan berjalan seperti berikut:
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.28]{figures/1login}
+	\caption{Proses Login}
+\end{figure}
+
+Jika login berhasil maka hasilnya akan seperti ini :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.28]{figures/loginn}
+	\caption{Login Berhasil}
+\end{figure}
+
+\newpage
+\subsection{Menemukan NIK KTP pada Halaman Profil 2}
+Untuk menemukan NIK KTP kita harus masuk kehalaman profil dengan masukkan code berikut :
+\begin{verbatim}
+browser.find_element_by_xpath('/html/body/div/nav/div/div[2]
+/ul/strong/li/a').click()
+
+browser.find_element_by_link_text('Profile').click()
+\end{verbatim}
+
+Penjelasan :
+\begin{enumerate}
+	\item Code pada baris pertama berfungsi untuk menampilkan menu pada menu dropdown 
+	\item Code pada baris kedua berfungsi untuk mengklik link profile lalu berpindah ke halaman profil.
+\end{enumerate}
+
+Hasil dari code baris ke 1 :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.3]{figures/6menubar}
+	\caption{Menampilkan Menu Bar Profil}
+\end{figure}
+\newpage
+Hasil dari code baris ke 2:
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/6profile}
+	\caption{Halaman Profil}
+\end{figure}
+
+Selain menggunakan cara diatas kita dapat langsung masuk ke halaman profile dengan kode berikut:
+
+\begin{verbatim}
+browser.get('https://www.tokoperhutani.com/member/profile')
+\end{verbatim}
+
+Penjelasan: 
+\begin{enumerate}
+	\item Kode tersebut akan membuka halaman profile tanpa harus melewati menu 
+\end{enumerate}
+
+Setelah kode tersebut dijalankan maka kita akan berada pada halaman profile dan menemukan data diri dan NIK kita seperti berikut:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.28]{figures/6profile}
+	\caption{Halaman Profil}
+\end{figure}
+
+
+\newpage
+\subsection{Tutorial Login 3}
+Untuk bisa login pada akun tokoperhutani.com maka kita masukkan code berikut pada tools Spyder :
+\begin{verbatim}
+browser.find_element_by_xpath('/html/body/div
+/nav/div/div[2]/ul/li[1]/a/strong').click()
+browser.find_element_by_id('email').send_keys
+('mifta896@gmail.com')
+browser.find_element_by_id('password').send_k
+eys("mifta@22")
+browser.find_element_by_class_name('le-button
+').click()
+\end{verbatim}
+
+Penjelasan :
+\begin{enumerate}
+	\item Baris pertama untuk mengklik menu login agar form login terbuka
+	\item Baris Kedua untuk mengisikan email pada form login 
+	\item Baris Ketiga untuk mengisi password pada form login
+	\item Baris Keempat untuk mengklik tombol login agar bisa login ke akun yang di inputkan di email dan password.
+\end{enumerate}
+
+Jika login berhasil maka hasilnya akan seperti ini :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/6LOGIN}
+	\caption{Login Berhasil}
+\end{figure}
+
+\newpage
+\subsection{Menemukan NIK KTP Pada Profil 3}
+Untuk menemukan NIK KTP pada profil masukkan code berikut :
+\begin{verbatim}
+browser.find_element_by_xpath('/html/body/div/nav/div/div[2]
+/ul/strong/li/a').click()
+browser.find_element_by_link_text('Profile').click()
+\end{verbatim}
+
+Penjelasan :
+\begin{enumerate}
+	\item Baris Pertama untuk menampilkan menu pada bar
+	\item Baris Kedua untuk mengklik profile dan menampilkan data dan di dalamnya terdapat NIK
+\end{enumerate}
+
+Hasil running code baris ke 1 :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.28]{figures/1NIK}
+	\caption{Menampilkan Menu Bar Profil}
+\end{figure}
+\newpage
+Hasil running code baris ke 2:
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/2NIK}
+	\caption{Halaman Profil}
+\end{figure}
+
+
+\subsection {Menemukan NIK KTP pada Menu Profil 4}
 Untuk menemukan NIK KTP pada profil, masukkan code berikut :
 \begin{verbatim}
 browser.find_element_by_xpath('/html/body/div/nav/div/div[2]
@@ -438,7 +674,7 @@ Maka akan menjalankan kode dari baris ke 1:
 	\includegraphics[scale=0.25]{figures/735menuprofile}
 	\caption{Menu Bar Profil}
 \end{figure}
-
+\newpage
 Maka akan menjalankan kode baris ke 2:
 \begin{figure}[h]
 	\centering
@@ -447,7 +683,125 @@ Maka akan menjalankan kode baris ke 2:
 \end{figure}
 
 \newpage
-\subsection {Mencari Jenis Kayu Jati dan Memasukkannya ke Keranjang Pembelian}
+\section{Tutorial Mencari Jenis Kayu Jati, Memasukkannya ke Keranjang Pembelian, dan Konfirmasi Pesanan }
+
+\subsection{Tutorial Mencari Jenis Kayu Jati 1}
+Berikut adalah tutorial untuk mencari Jenis Kayu Jati Dan memasukkannya ke keranjang. Masukkan code berikut ini pada spyder:
+\begin{verbatim}
+Code Untuk masuk ke halaman web tokoperhutani.com :
+from selenium import webdriver
+opsi = webdriver.firefox.options.Options()
+opsi.headless = False
+binary = webdriver.firefox.firefox_binary.FirefoxBinary
+('C:\\Program Files\\Mozilla Firefox\\firefox.exe')
+cap = webdriver.common.desired_capabilities.Desired
+Capabilities().FIREFOX
+cap['marionette'] = True
+browser=webdriver.Firefox(options=opsi,capabi
+lities=cap,firefox_binary=binary)
+browser.get('https://tokoperhutani.com/')
+pemberitahuan = browser.find_element_by_xpath('//*[@id="
+bannerModal"]/div/div/div[1]/button').click()
+retail = browser.get('https://tokoperhutani.
+com/beranda')
+
+Code untuk login di web tokoperhutani.com :
+login = browser.find_element_by_xpath('/html/body/
+div/nav/div/div[2]/ul/li[1]/a/strong').click()
+email = browser.find_element_by_id('email').send_
+keys('novinurinabb25@gmail.com')
+password = browser.find_element_by_id('password').
+send_keys("86083F")
+tombol = browser.find_element_by_class_name
+('le-button').click()
+browser.find_element_by_link_text('Beranda')
+.click()
+
+Code untuk memilih jenis kayu jati :
+retail = browser.get('https://tokoperhutani.com/beranda')
+wilayah = browser.find_element_by_id
+('wilayah').click()
+plh_wilayah = browser.find_element_by_xpath('//*[@id="wilayah"]
+/option[4]').click()
+kota = browser.find_element_by_id('kota').
+click()
+plh_kota = browser.find_element_by_xpath
+('//*[@id="kota"]/option[3]').click()
+tpk = browser.find_element_by_id
+('select_kota').click()
+plh_tpk = browser.find_element_by_xpath
+('//*[@id="select_kota"]/option[3]').click()
+cari = browser.find_element_by_id('i_submit').
+click()
+\end{verbatim}
+
+Berikut hasil running dari code :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/jatii}
+	\caption{Mencari Kayu Jati}
+\end{figure}
+
+Kemudian masukkan code ini untuk memasukkan kayu jati ke dalan keranjang :
+\begin{verbatim}
+beli_sekarang = browser.find_element_by_xpath('/html
+/body/div/strong/div[8]/div/div/form/input').click()
+\end{verbatim}
+Hasil dari code adalah sebagai berikut :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/belii}
+	\caption{Beli Kayu Jati}
+\end{figure}
+
+\newpage
+Tekan beli sekarang maka otomatis barang akan masuk ke dalam keranjang belanja :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/keranjangg}
+	\caption{Barang Masuk Ke Keranjang}
+\end{figure}
+
+\subsection{Konfirmasi Pesanan 1}
+Tutorial selanjutnya yaitu konfirmasi pesanan hingga menerima email pesanan. 
+Masukkan code berikut pada spyder :
+\begin{verbatim}
+lanjut_belanja = browser.find_element_by_xpath('/html
+/body/div[1]/strong/div[5]/div/div/div[3]/a/button').
+click()
+bank_bri = browser.find_element_by_xpath('/
+html/body/div/strong/section[2]/div/div[2]/
+div/div/form/div/ul/li[2]/label/img').click()
+\end{verbatim}
+
+Berikut hasil debug dari code :
+\begin{figure}[h]
+ 	\centering
+ 	\includegraphics[scale=0.26]{figures/bayar}
+ 	\caption{Konfirmasi Pembayaran}
+\end{figure}
+ 
+Kemudian Masukkan code berikut untuk melanjutkan proses:
+\begin{verbatim}
+konfirmasi_pemesanan = browser.find_element_by_xpath('//*
+[@id="confirmOrder"]')
+\end{verbatim}
+Berikut hasil debug dari code: 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/invoicee}
+	\caption{Invoice Pembayaran}
+\end{figure}
+
+Jika proses berhasil akan masuk pesan ke email kita seperti tampilan berikut:
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.30]{figures/emailbayar}
+	\caption{Pesan Email}
+\end{figure}
+
+\newpage
+\subsection {Tutorial Mencari Jenis Kayu Jati 2}
 Langkah yang perlu dilakukan adalah, masukkan kode berikut di spyder :
 \begin{verbatim}
 browser=webdriver.Firefox(options=opsi,capabilities=cap,firefox_binary=binary)
@@ -462,7 +816,7 @@ Sehingga akan diarahkan ke Pembelian Kayu Jati. Dan langkah berikutya adalah mem
 \end{figure}
 
 \newpage
-\subsection {Melakukan Konfirmasi Pemesanan}
+\subsection {Melakukan Konfirmasi Pemesanan 2}
 Untuk melakukan konfirmasi Pemesanan, pertama jalankan dahulu kode berikut :
 \begin{verbatim}
 browser=webdriver.Firefox(options=opsi,capabilities=cap,firefox_binary=binary)
@@ -470,7 +824,7 @@ browser.get('https://www.tokoperhutani.com/member/order')
 \end{verbatim}
 
 Maka akan diarahkan ke Menu Konfirmasi Pemesanan yang terdapat pada Inbox akun.
-Gambar dibawah merupakan konfirmasi ppemesanan Kayu Jati
+Gambar dibawah merupakan konfirmasi pemesanan Kayu Jati:
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.25]{figures/T6_1}
@@ -484,14 +838,85 @@ Gambar dibawah merupakan screenshot untuk
 	\caption{Email Pemesanan Kayu Jati}
 \end{figure}
 
+\newpage
+\subsection{Tutorial Mencari Jenis Kayu Jati 3}
+Berikut adalah tutorial untuk mencari Kayu Jati Dan memasukkan ke keranjang. Masukkan code berikut ini pada spyder:
+\begin{verbatim}
+browser.get('https://www.tokoperhutani.com/')
+#Tutup Modal
+browser.find_element_by_xpath('//*[@id="bannerModal"]
+/div/div/div[1]/button').click()
+#Klik Login
+browser.find_element_by_xpath('/html/body/div/nav/
+div/div[2]/ul/li[1]/a/strong').click()
+#Input 
+browser.find_element_by_id('email')
+.send_keys('dindaayuprtw@gmail.com')
+browser.find_element_by_id('password')
+.send_keys("5BF5DF")
+#Submit
+browser.find_element_by_class_name('le-button')
+.click()
+\end{verbatim}
 
+Kode diatas berfungsi untuk masuk ke web toko perhutani dan melakukan login.
+langkah selanjutnya adalah masuk ke beranda dan mencari kayu yang akan dimasukan ke keranjang.
 
+\begin{verbatim}
+browser.get('https://tokoperhutani.com/beranda')
+browser.find_element_by_id('wilayah').click()
+browser.find_element_by_xpath('//*[@id="wilayah"]
+/option[4]').click()
+browser.find_element_by_id('kota').click()
+browser.find_element_by_xpath('//*[@id="kota"]
+/option[3]').click()
+browser.find_element_by_id('select_kota').click()
+browser.find_element_by_xpath('//*[@id="select_kota"]
+/option[3]').click()
+browser.find_element_by_id('i_submit').click()
+\end{verbatim}
 
+\newpage
+jika kode tersebut berhasil di jalankan maka berikut hasil running dari kode diatas pada tombol ketersediaan akan berubah menjadi dipesan:
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.3]{figures/6keranjang}
+	\caption{Mencari Kayu Jati}
+\end{figure}
 
+Kemudian kode berikut untuk menekan beli sekarang maka otomatis barang akan masuk ke dalam keranjang belanja:
+\begin{verbatim}
+browser.find_element_by_xpath('/html/body/div/strong/
+div[8]/div/div/form/input').click()
+\end{verbatim}
 
+\newpage
+\subsection{Konfirmasi Pesanan 3}
+Setelah memasukan kayu kedalam keranjang selanjutnya yaitu konfirmasi pesanan hingga menerima email pesanan. 
+Masukkan code berikut:
+\begin{verbatim}
+browser.find_element_by_xpath('/html/body/div[1]/strong/
+div[5]/div/div/div[3]/a/button').click()
+browser.find_element_by_xpath('/html/body/div/strong/
+section[2]/div/div[2]/div/div/form/div/ul/li[2]/label/img')
+.click()
+\end{verbatim}
 
+Kemudian masukkan code berikut ini untuk melanjutkan proses pemesanan:
+\begin{verbatim}
+browser.find_element_by_xpath('//*[@id="confirmOrder"]').click()
+\end{verbatim}
+
+Hasilnya maka akan dialihkan ke halaman invoice berikut ini:
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.30]{figures/6invoice}
+	\caption{Pesan Email}
+\end{figure}
+
+Jika proses berhasil akan masuk pesan mengenai informasi pembayaran ke email kita.
 \newpage 
-\subsection{Mencari Jenis kayu Jati Dan Memasukkannya ke keranjang }
+\subsection{Mencari Jenis kayu Jati Dan Memasukkannya ke keranjang 4}
 Berikut adalah cara kita untuk memilih jenis kayu yaitu jenis kayu jati, terlebih dahulu kita masukkan kodingan berikut ini: 
 \begin{verbatim}
 retail = browser.get('https://tokoperhutani.com/beranda')
