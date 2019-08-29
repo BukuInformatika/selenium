@@ -1490,3 +1490,49 @@ Hasilnya pada python console di spyder akan muncul status user seperti berikut:
 	\includegraphics[scale=0.7]{figures/9StatusUser}
 	\caption{Hasil pengecekan status user}
 \end{figure}
+
+\newpage
+\subsection{Mengecek Status User}
+Tutorial kali ini kita akan mengecek status pada user yang kita miliki apakah statusnya aktif atau tidak. Untuk mengetahui status user kita, maka sebelumnya kita harus login ke akun kita terlebih dahulu lalu mengambil data pada menu user nantinya.
+Masukan kode berikut kedalam tools spyder:
+\begin{verbatim}
+from selenium import webdriver
+from time import sleep
+opsi = webdriver.firefox.options.Options()
+opsi.headless = False
+binary = webdriver.firefox.firefox_binary.Firefox
+Binary('C:\\Program Files\\Mozilla Firefox\\firefox.exe')
+cap = webdriver.common.desired_capabilities.
+DesiredCapabilities().FIREFOX
+cap['marionette'] = True
+browser=webdriver.Firefox(options=opsi,capabilities
+=cap,firefox_binary=binary)
+web_pht = 'https://www.tokoperhutani.com/'
+browser.get(web_pht)
+
+#metutup navigasi
+browser.find_element_by_xpath('//*[@id="bannerModal"]
+/div/div/div[1]/button').click()
+
+#login
+browser.find_element_by_xpath('/html/body/div/nav/
+div/div[2]/ul/li[1]/a/strong').click()
+browser.find_element_by_id('email').send_keys
+('novinurinabb25@gmail.com')
+browser.find_element_by_id('password').send_keys("86083F")
+browser.find_element_by_class_name('le-button').click()
+sleep(10)
+
+#mengecek status user
+status = browser.find_element_by_xpath('/html/body/div[1]
+/nav/div/div[2]/ul/strong/li/a/img').get_attribute("title")
+print(status)
+\end{verbatim}
+
+\newpage
+Jika berhasil maka akan akan muncul keterangan "status aktif" pada python console di spyder seperti gambar di bawah ini :
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.6]{figures/statususermia}
+	\caption{Mengecek Status User}
+\end{figure}
