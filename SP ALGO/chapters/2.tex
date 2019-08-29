@@ -1442,3 +1442,51 @@ Hasil setelah dijalankan adalah :
 	\includegraphics[scale=0.6]{figures/2tabelpesanan}
 	\caption{Halaman data dari tabel pesanan}
 \end{figure}
+
+
+\newpage
+\section{Tutorial Mengecek Status User}
+Pada tutorial kali ini kita akan mengecek status dari user kita apakah aktif atau tidak.
+\subsection{Mengecek Status User}
+Untuk mengetahui status user kita, kita harus login ke akun kita terlebih dahulu lalu mengambil data pada menu user.
+\\\\
+Masukan kode dibawah ini kedalam spyder:
+\begin{verbatim}
+browser = webdriver.Chrome()
+browser.get('https://www.tokoperhutani.com/')
+
+#Tutup Modal
+browser.find_element_by_xpath('//*[@id="bannerModal"]
+/div/div/div[1]/button').click()
+
+#Klik Login
+browser.find_element_by_xpath('/html/body/div/nav/div/
+div[2]/ul/li[1]/a/strong').click()
+
+#Input 
+browser.find_element_by_id('email')
+.send_keys('dindaayuprtw@gmail.com')
+browser.find_element_by_id('password')
+.send_keys("5BF5DF")
+
+#Submit
+browser.find_element_by_class_name('le-button').click()
+
+#Masuk halaman beranda
+browser.find_element_by_link_text('Beranda').click()
+
+# Mengambil data status user
+status_user = browser.find_element_by_xpath('/html/body/div[1]
+/nav/div/div[2]/ul/strong/li/a/img').get_attribute("title")
+
+# print status user
+print(status_user)
+\end{verbatim}
+
+\newpage
+Hasilnya pada python console di spyder akan muncul status user seperti berikut:
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{figures/9StatusUser}
+	\caption{Hasil pengecekan status user}
+\end{figure}
