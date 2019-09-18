@@ -101,52 +101,40 @@ Hasilnya  di Mozilla Akan mucul seperti ini :
 	\includegraphics[scale=0.3]{figures/3hasil.PNG}
 	\caption{Navigator Pada Alamat Kantor}
 \end{figure}
-\\
+
 
 Masukkan code berikut untuk test navigator ke halaman panduan Registrasi:
-\begin{verbatim}
-browser.find_element_by_link_text('Registrasi')
-.click()
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=3, lastline=3, caption=Halaman Panduan Registrasi]{src/dinda.py}
 
 Hasilnya  di Google Chrome Akan mucul seperti ini :
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.24]{figures/1pdregis}
+	\includegraphics[scale=0.23]{figures/1pdregis}
 	\caption{Halaman Panduan Registrasi}
 \end{figure}
 
 Masukkan code berikut untuk test menampilkan pilihan pendaftaran:
-\begin{verbatim}
-browser.find_element_by_link_text('Daftar')
-.click()
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=5, lastline=5, caption=Tombol Navigasi Daftar]{src/dinda.py}
 
 Hasilnya  di Google Chrome Akan mucul seperti ini :
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.42]{figures/2daftar}
-	\caption{Tombol navigasi Daftar}
+	\caption{Tombol Navigasi Daftar}
 \end{figure}
 
-Masukkan code berikut untuk test memilih Daftar member:
-\begin{verbatim}
-browser.find_element_by_link_text('Daftar Member')
-.click()
-\end{verbatim}
+Masukkan code berikut untuk test memilih Daftar Member:
+\lstinputlisting[language=Python, firstline=7, lastline=7, caption=Halaman Daftar Member]{src/dinda.py}
 
 Hasilnya  di Google Chrome Akan mucul seperti ini :
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.37]{figures/3daftar}
+	\includegraphics[scale=0.33]{figures/3daftar}
 	\caption{Halaman Daftar Member}
 \end{figure}
 
 Masukkan code berikut untuk test navigator ke halaman Contact Center:
-\begin{verbatim}
-browser.find_element_by_link_text('Contact Center')
-.click()
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=9, lastline=9, caption=Halaman Contact Center]{src/dinda.py}
 
 Hasilnya  di Google Chrome Akan mucul seperti ini :
 \begin{figure}[h]
@@ -236,22 +224,11 @@ Hasilnya  di Mozilla Akan mucul seperti ini :
 
 \newpage
 \section{Pendaftaran Member}
-Pada tutorial ini membutuhkan file gambar ktp untuk verivikasi data.
+Pada tutorial ini membutuhkan file gambar ktp untuk verifikasi data.
 
 Masukan kode dibawah ini yang berfungsi untuk meng-import modul selenium dan time.
-\begin{verbatim}
-from selenium import webdriver
-from time import sleep
 
-browser = webdriver.Chrome()
-web_pht = 'https://www.tokoperhutani.com/'
-
-browser.get(web_pht)
-
-browser.find_element_by_xpath('//*[@id="bannerModal"]
-/div/div/div[1]/button').click()
-
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=13, lastline=21, caption=Import Modul]{src/dinda.py}
 
 Penjelasan:
 \begin{enumerate}
@@ -260,7 +237,7 @@ Penjelasan:
 	\item karena di halaman landing page web toko perhutani terdapat modal yang menutupi halaman disini kita menutupnya.
 \end{enumerate}
 
-
+\pagebreak
 Hasilnya tampilan beranda awal website tokoperhutani:
 
 
@@ -269,49 +246,27 @@ Hasilnya tampilan beranda awal website tokoperhutani:
 	\includegraphics[scale=0.425]{figures/1home}
 	\caption{Navigator Pada Menu Beranda}
 \end{figure}
-Masukkan code berikut untuk test masuk menu pendaftaran dengan menekan tombol daftar lalu memilih daftar member :
-\begin{verbatim}
-browser.find_element_by_link_text('Daftar').click()
-sleep(1)
-browser.find_element_by_link_text('Daftar Member').click()
-\end{verbatim}
 
-Hasilnya  di Google Chrome Akan mucul seperti ini :
+Masukkan code berikut untuk test masuk menu pendaftaran dengan menekan tombol daftar lalu memilih daftar member :
+\lstinputlisting[language=Python, firstline=23, lastline=25, caption=Halaman Daftar]{src/dinda.py}
+
+Hasilnya  di Google Chrome akan mucul seperti ini :
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.25]{figures/3daftar}
 	\caption{Halaman Daftar}
 \end{figure}
 
-Masukkan code berikut untuk test mengisi form nama dan alamat :
-\begin{verbatim}
-browser.find_element_by_xpath('//*[@id="nama"]')
-.send_keys('Kurnia dani')
-browser.find_element_by_xpath('//*[@id="alamat"]')
-.send_keys('jalan Sariasih no 2')
-browser.find_element_by_xpath('//*[@id="email_val"]')
-.send_keys('kurniadani@gmail.com')
-browser.find_element_by_id('tgl_lahir').click()
-browser.find_element_by_xpath('//*[@id="ui-datepicker-div"]
-/table/tbody/tr[2]/td[2]').click()
-browser.find_element_by_xpath('//*[@id="hp"]')
-.send_keys('628123245343')
-browser.find_element_by_xpath('//*[@id="no_ktp"]')
-.send_keys('33101212822220005')
-browser.find_element_by_xpath('//*[@id="tippe"]
-/option[3]').click()
-browser.find_element_by_xpath('//*[@id="checklist"]')
-.click()
-browser.find_element_by_xpath('//*[@id="i_submit"]')
-.click()
-\end{verbatim}
+\pagebreak
+Masukkan code berikut untuk test mengisi form nama, alamat dan lain-lain :
+\lstinputlisting[language=Python, firstline=27, lastline=36, caption=Mengisi Form]{src/dinda.py}
 
-\newpage
-Hasilnya akhir pada mozila firefox Akan mucul seperti ini:
+
+Hasilnya akhir pada Google Chrome Akan mucul seperti ini:
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.24]{figures/4daftar}
-	\caption{Halaman Daftar}
+	\includegraphics[scale=0.30]{figures/4daftar}
+	\caption{Halaman Mengisi Form}
 \end{figure}
 
 Apabila telah selesai melakukan pendaftaran, selanjutnya akan ada verifikasi dari pihak Tokoperhutani sehari setelah pendaftaran dilakukan.
@@ -410,9 +365,7 @@ Hasil setelah kita mengganti password adalah sebagai berikut:
 \subsection{Contact Center WA}
 Berikut ini adalah tutorial untuk menghubungi contact center WA. Setelah Login dan Reset Password kita masuk lagi ke halaman utama dengan kode di bawah ini:
 
-\begin{verbatim}
-browser.find_element_by_link_text('Beranda').click()
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=38, lastline=38, caption=Halaman Beranda]{src/dinda.py}
 
 Hasilnya  di Google Chrome Akan masuk di halaman beranda seperti ini : 
 
@@ -424,31 +377,26 @@ Hasilnya  di Google Chrome Akan masuk di halaman beranda seperti ini :
 
 Masukkan code berikut untuk test masuk menu contact center dengan mencari link text Contact Center:
 
-\begin{verbatim}
-browser.find_element_by_link_text('Contact Center').click()
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=39, lastline=39, caption=Halaman Contact Center]{src/dinda.py}
 
 Hasilnya  di Google Chrome Akan masuk di halaman contact center seperti ini : 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.29]{figures/5kontak}
+	\includegraphics[scale=0.27]{figures/5kontak}
 	\caption{Halaman Contact Center}
 \end{figure}
 
-Masukkan code berikut untuk test membuka link kontak wa:
+Masukkan code berikut untuk test link kontak wa:
 
-\begin{verbatim}
-browser.find_element_by_xpath('//*[@id="banner-holder"]
-/div/div/div/ul/li[2]/a').click()
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=40, lastline=40, caption=Halaman Whatsdinda]{src/dinda.py}
 
-Hasilnya  di Google Chrome Akan masuk di halaman whatsapp : 
+Hasilnya  di Google Chrome Akan masuk di halaman whatsdinda : 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.25]{figures/5linkwa}
-	\caption{Halaman Whatsapp}
+	\includegraphics[scale=0.30]{figures/5linkwa}
+	\caption{Halaman Whatsdinda}
 \end{figure}
 
 \newpage
@@ -507,24 +455,7 @@ Hasil menjalankan code baris ke 2:
 \newpage
 \subsection{Tutorial Login 2}
 Untuk login pada akun tokoperhutani.com kita memerlukan informasi akun seperti email dan password lalu masukkan code berikut:
-\begin{verbatim}
-browser.get('https://www.tokoperhutani.com/')
-
-browser.find_element_by_xpath('//*[@id="bannerModal"]
-/div/div/div[1]/button').click()
-
-browser.find_element_by_xpath('/html/body/div
-/nav/div/div[2]/ul/li[1]/a/strong').click()
-
-browser.find_element_by_id('email')
-.send_keys('dindaayuprtw@gmail.com')
-
-browser.find_element_by_id('password')
-.send_keys("5BF5DF")
-
-browser.find_element_by_class_name('le-button
-').click()
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=43, lastline=53, caption=Login]{src/dinda.py}
 
 Penjelasan :
 \begin{enumerate}
@@ -553,39 +484,32 @@ Jika login berhasil maka hasilnya akan seperti ini :
 
 \newpage
 \subsection{Menemukan NIK KTP pada Halaman Profil 2}
-Untuk menemukan NIK KTP kita harus masuk kehalaman profil dengan masukkan code berikut :
-\begin{verbatim}
-browser.find_element_by_xpath('/html/body/div/nav/div/div[2]
-/ul/strong/li/a').click()
-
-browser.find_element_by_link_text('Profile').click()
-\end{verbatim}
+Untuk menemukan NIK KTP kita harus masuk ke halaman profil dengan masukkan code berikut :
+\lstinputlisting[language=Python, firstline=56, lastline=58, caption=Halaman Profile]{src/dinda.py}
 
 Penjelasan :
 \begin{enumerate}
 	\item Code pada baris pertama berfungsi untuk menampilkan menu pada menu dropdown 
-	\item Code pada baris kedua berfungsi untuk mengklik link profile lalu berpindah ke halaman profil.
+	\item Code pada baris kedua berfungsi untuk mengklik link profile lalu berpindah ke halaman profile.
 \end{enumerate}
 
 Hasil dari code baris ke 1 :
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.3]{figures/6menubar}
-	\caption{Menampilkan Menu Bar Profil}
+	\caption{Menampilkan Menu Bar Profile}
 \end{figure}
 \newpage
 Hasil dari code baris ke 2:
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.25]{figures/6profile}
-	\caption{Halaman Profil}
+	\caption{Halaman Profile}
 \end{figure}
 
 Selain menggunakan cara diatas kita dapat langsung masuk ke halaman profile dengan kode berikut:
 
-\begin{verbatim}
-browser.get('https://www.tokoperhutani.com/member/profile')
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=60, lastline=60, caption=Halaman Profile]{src/dinda.py}
 
 Penjelasan: 
 \begin{enumerate}
@@ -597,7 +521,7 @@ Setelah kode tersebut dijalankan maka kita akan berada pada halaman profile dan 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.28]{figures/6profile}
-	\caption{Halaman Profil}
+	\caption{Halaman Profile}
 \end{figure}
 
 
@@ -841,43 +765,15 @@ Gambar dibawah merupakan screenshot untuk
 \newpage
 \subsection{Tutorial Mencari Jenis Kayu Jati 3}
 Berikut adalah tutorial untuk mencari Kayu Jati Dan memasukkan ke keranjang. Masukkan code berikut ini pada spyder:
-\begin{verbatim}
-browser.get('https://www.tokoperhutani.com/')
-#Tutup Modal
-browser.find_element_by_xpath('//*[@id="bannerModal"]
-/div/div/div[1]/button').click()
-#Klik Login
-browser.find_element_by_xpath('/html/body/div/nav/
-div/div[2]/ul/li[1]/a/strong').click()
-#Input 
-browser.find_element_by_id('email')
-.send_keys('dindaayuprtw@gmail.com')
-browser.find_element_by_id('password')
-.send_keys("5BF5DF")
-#Submit
-browser.find_element_by_class_name('le-button')
-.click()
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=66, lastline=75, caption=Login]{src/dinda.py}
 
 Kode diatas berfungsi untuk masuk ke web toko perhutani dan melakukan login.
-langkah selanjutnya adalah masuk ke beranda dan mencari kayu yang akan dimasukan ke keranjang.
+Langkah selanjutnya adalah masuk ke beranda dan mencari kayu yang akan dimasukan ke keranjang.
 
-\begin{verbatim}
-browser.get('https://tokoperhutani.com/beranda')
-browser.find_element_by_id('wilayah').click()
-browser.find_element_by_xpath('//*[@id="wilayah"]
-/option[4]').click()
-browser.find_element_by_id('kota').click()
-browser.find_element_by_xpath('//*[@id="kota"]
-/option[3]').click()
-browser.find_element_by_id('select_kota').click()
-browser.find_element_by_xpath('//*[@id="select_kota"]
-/option[3]').click()
-browser.find_element_by_id('i_submit').click()
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=77, lastline=98, caption=Mencari Kayu Jati]{src/dinda.py}
 
 \newpage
-jika kode tersebut berhasil di jalankan maka berikut hasil running dari kode diatas pada tombol ketersediaan akan berubah menjadi dipesan:
+Jika kode tersebut berhasil di jalankan maka berikut hasil running dari kode diatas pada tombol ketersediaan akan berubah menjadi dipesan:
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.3]{figures/6keranjang}
@@ -885,27 +781,16 @@ jika kode tersebut berhasil di jalankan maka berikut hasil running dari kode dia
 \end{figure}
 
 Kemudian kode berikut untuk menekan beli sekarang maka otomatis barang akan masuk ke dalam keranjang belanja:
-\begin{verbatim}
-browser.find_element_by_xpath('/html/body/div/strong/
-div[8]/div/div/form/input').click()
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=100, lastline=100, caption=Memasukan Pesanan ke Keranjang]{src/dinda.py}
 
 \newpage
 \subsection{Konfirmasi Pesanan 3}
 Setelah memasukan kayu kedalam keranjang selanjutnya yaitu konfirmasi pesanan hingga menerima email pesanan. 
 Masukkan code berikut:
-\begin{verbatim}
-browser.find_element_by_xpath('/html/body/div[1]/strong/
-div[5]/div/div/div[3]/a/button').click()
-browser.find_element_by_xpath('/html/body/div/strong/
-section[2]/div/div[2]/div/div/form/div/ul/li[2]/label/img')
-.click()
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=103, lastline=109, caption=Konfirmasi Pesanan]{src/dinda.py}
 
 Kemudian masukkan code berikut ini untuk melanjutkan proses pemesanan:
-\begin{verbatim}
-browser.find_element_by_xpath('//*[@id="confirmOrder"]').click()
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=111, lastline=111, caption=Melanjutkan Proses Pemesanan]{src/dinda.py}
 
 Hasilnya maka akan dialihkan ke halaman invoice berikut ini:
 \begin{figure}[h]
@@ -985,118 +870,57 @@ ke email masing masing untuk menunggu pembayaran
 Berikut adalah tutorial untuk  mengambil data dari tabel kayu yang dijual dan pengambilan data dari tabel pesanan. 
 
 \subsection{Tutorial mengambil data dari tabel kayu yang dijual 1}
-untuk mengambil data penjualan kayu kita harus login dan membuka halaman pencarian kayu.
+Untuk mengambil data penjualan kayu kita harus login dan membuka halaman pencarian kayu.
 Masukan kode berikut untuk login dan masuk ke halaman pencarian kayu:
-\begin{verbatim}
-from selenium import webdriver
-from time import sleep
-
-browser = webdriver.Chrome()
-
-browser.get('https://www.tokoperhutani.com/')
-
-#Tutup Modal
-browser.find_element_by_xpath('//*[@id="bannerModal"]
-/div/div/div[1]/button').click()
-
-#Klik Login
-sleep(2)
-browser.find_element_by_xpath('/html/body/div/nav/div/
-div[2]/ul/li[1]/a/strong').click()
-
-#Input 
-sleep(2)
-browser.find_element_by_id('email')
-.send_keys('dindaayuprtw@gmail.com')
-browser.find_element_by_id('password')
-.send_keys("5BF5DF")
-
-#Submit
-browser.find_element_by_class_name('le-button')
-.click()
-
-#Masuk halaman beranda
-sleep(1)
-browser.get('https://tokoperhutani.com/beranda')
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=113, lastline=137, caption=Login dan Masuk Halaman Pencarian Kayu]{src/dinda.py}
 \newpage
 Maka hasilnya akan masuk ke halaman beranda:
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.30]{figures/7beranda}
-	\caption{Halaman beranda}
+	\caption{Halaman Pencarian Kayu}
 \end{figure}
 
-Tahap selanjutnya memcari kayu:
+Tahap selanjutnya mencari kayu:
  
-\begin{verbatim}
-sleep(0.5)
-browser.find_element_by_id('wilayah').click()
-browser.find_element_by_xpath('//*[@id="wilayah"]
-/option[4]').click()
-sleep(0.5)
-browser.find_element_by_id('kota').click()
-browser.find_element_by_xpath('//*[@id="kota"]
-/option[3]').click()
-sleep(0.5)
-browser.find_element_by_id('select_kota').click()
-browser.find_element_by_xpath('//*[@id="select_kota"]
-/option[3]').click()
-sleep(0.5)
-browser.find_element_by_id('i_submit').click()
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=140, lastline=156, caption=Pencarian Kayu]{src/dinda.py}
 \newpage
-maka akan muncul hasil pencarian:
+Maka akan muncul hasil pencarian:
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.27]{figures/7carikayu}
-	\caption{Hasil pencarian kayu}
+	\caption{Hasil Pencarian Kayu}
 \end{figure}
 
 Hasil pencarian kayu sudah muncul dan selanjutnya adalah mengambil data hasil pencarian kayu tersebut, karena data hasil pencarian cukup banyak disini kita pakai looping untuk mengambilnya:
-\begin{verbatim}
-table = browser.find_element_by_id('example')
-for row in table.find_elements_by_css_selector('tr'):
-for cell in row.find_elements_by_tag_name('td'):
-print(cell.text)
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=159, lastline=162, caption=Pengambilan Data]{src/dinda.py}
 
-maka akan muncul hasil pengambilan data:
+Maka akan muncul hasil pengambilan data:
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.30]{figures/7dataambil}
-	\caption{Hasil pengambilan data}
+	\caption{Hasil Pengambilan Data}
 \end{figure}
 \newpage
 \subsection{Tutorial mengambil data dari tabel pesanan 1}
 Untuk mengambil data pesanan setelah kita login maka kita perlu masuk ke menu pesanan melewati menu user.
 Berikut kode untuk masuk ke dalam halaman pesanan setelah login:
-\begin{verbatim}
-browser.find_element_by_xpath('/html/body/div/nav/
-div/div[2]/ul/strong/li/a').click()
-browser.find_element_by_xpath('/html/body/div/nav/
-div/div[2]/ul/strong/li/ul/li[3]/a').click()
-\end{verbatim}
-maka akan masuk ke halaman pesanan:
+\lstinputlisting[language=Python, firstline=164, lastline=165, caption=Halaman Pesanan]{src/dinda.py}
+Maka akan masuk ke halaman pesanan:
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.30]{figures/8pesanan}
-	\caption{Halaman pesanan}
+	\caption{Halaman Pesanan}
 \end{figure}
 
-setelah itu kita ambil data pesanan pada tabel, seperti halnya pada pengambilan data penjualan kayu diatas karna mungkin tabel berisi banyak data kita memakai looping untuk mengambil data:
-\begin{verbatim}
-table = browser.find_element_by_id('example')
-for row in table.find_elements_by_css_selector('tr'):
-for cell in row.find_elements_by_tag_name('td'):
-print(cell.text)
-\end{verbatim}
+Setelah itu kita ambil data pesanan pada tabel, seperti halnya pada pengambilan data penjualan kayu diatas karna mungkin tabel berisi banyak data kita memakai looping untuk mengambil data:
+\lstinputlisting[language=Python, firstline=159, lastline=162, caption=Pengambilan Data]{src/dinda.py}
 \newpage
 Hasil pengambilan data:
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.55]{figures/8datapesan}
-	\caption{Halaman pesanan}
+	\caption{Halaman Pengambilan Data}
 \end{figure}
 
 
@@ -1619,46 +1443,16 @@ Hasilnya data yang didapat akan di tampikan di spyder dengan tampilan sebagai be
 Pada tutorial kali ini kita akan mengecek status dari user kita apakah aktif atau tidak.
 \subsection{Mengecek Status User}
 Untuk mengetahui status user kita, kita harus login ke akun kita terlebih dahulu lalu mengambil data pada menu user.
-\\\\
+
 Masukan kode dibawah ini kedalam spyder:
-\begin{verbatim}
-browser = webdriver.Chrome()
-browser.get('https://www.tokoperhutani.com/')
-
-#Tutup Modal
-browser.find_element_by_xpath('//*[@id="bannerModal"]
-/div/div/div[1]/button').click()
-
-#Klik Login
-browser.find_element_by_xpath('/html/body/div/nav/div/
-div[2]/ul/li[1]/a/strong').click()
-
-#Input 
-browser.find_element_by_id('email')
-.send_keys('dindaayuprtw@gmail.com')
-browser.find_element_by_id('password')
-.send_keys("5BF5DF")
-
-#Submit
-browser.find_element_by_class_name('le-button').click()
-
-#Masuk halaman beranda
-browser.find_element_by_link_text('Beranda').click()
-
-# Mengambil data status user
-status_user = browser.find_element_by_xpath('/html/body/div[1]
-/nav/div/div[2]/ul/strong/li/a/img').get_attribute("title")
-
-# print status user
-print(status_user)
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=173, lastline=196, caption=Pengecekan Status User]{src/dinda.py}
 
 \newpage
 Hasilnya pada python console di spyder akan muncul status user seperti berikut:
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.7]{figures/9StatusUser}
-	\caption{Hasil pengecekan status user}
+	\caption{Hasil Pengecekan Status User}
 \end{figure}
 
 \newpage
