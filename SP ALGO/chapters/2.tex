@@ -1,21 +1,7 @@
 
 \section{Perintah Navigasi}
-Sebelum melakukan perintah navigasi pastikan kita memiliki tools Spyder, anaconda dan selenium. Lakukan instalasi selenium dengan cara ketik "pip install selenium" pada anaconda.
-
-kemudian buka aplikasi Spyder dan masukkan program berikut ini :
-\begin{verbatim}
-from selenium import webdriver
-opsi = webdriver.firefox.options.Options()
-opsi.headless = False
-binary = webdriver.firefox.firefox_binary.FirefoxBinary(
-'C:\\Program Files\\Mozilla Firefox\\firefox.exe')
-cap = webdriver.common.desired_capabilities.
-DesiredCapabilities().FIREFOX
-cap['marionette'] = True
-browser=webdriver.Firefox(options=opsi,
-capabilities=cap,firefox_binary=binary)
-browser.get('https://tokoperhutani.com/')
-\end{verbatim}
+Sebelum melakukan perintah navigasi pastikan kita memiliki tools Spyder, anaconda dan selenium. Lakukan instalasi selenium dengan cara ketik "pip install selenium" pada anaconda. kemudian buka aplikasi Spyder dan masukkan program berikut ini :
+\lstinputlisting[language=Python, firstline=1, lastline=8, caption=Perintah Navigasi]{src/mia.py}
 
 Penjelasan : 
 \begin{enumerate}
@@ -37,10 +23,7 @@ Setelah anda membuat Tambahan Codingan  seperti diatas untuk merunning program a
 
 Masukkan code berikut untuk test navigator pada menu Cara Pembayaran:
 
-\begin{verbatim}
-pembayaran= browser.get('https://tokoperhutani.com/
-article/static_art/cara-pembayaran')
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=10, lastline=10, caption=Cara Pembayaran]{src/mia.py}
 
 Hasilnya  di Mozilla Akan mucul seperti ini :
 \begin{figure}[h]
@@ -51,10 +34,7 @@ Hasilnya  di Mozilla Akan mucul seperti ini :
 
 Masukkan code berikut untuk test navigator pada menu Sertifikat Perhutani :
 
-\begin{verbatim}
-sertperhutani= browser.get('https://tokoperhutani.com/
-SertifikatPerhutani')
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=12, lastline=12, caption=Sertifikat Perhutani]{src/mia.py}
 
 Hasilnya  di Mozilla Akan mucul seperti ini :
 \begin{figure}[h]
@@ -276,12 +256,8 @@ Apabila telah selesai melakukan pendaftaran, selanjutnya akan ada verifikasi dar
 \subsection{Login}
 Selanjutnya kita akan mencoba untuk melakukan login pada tool dengan selenium. 
 Masukkan kode berikut untuk menampilkan form login:
-\begin{verbatim}
-content..browser.find_element_by_xpath('/html/body/div/
-nav/div/div[2]/ul/li[1]/a/strong').click().
-\end{verbatim}
-
-
+\lstinputlisting[language=Python, firstline=14, lastline=14
+, caption=Login]{src/mia.py}
 
 Berikut hasil dari codingan di atas:
 \begin{figure}[h]
@@ -291,15 +267,9 @@ Berikut hasil dari codingan di atas:
 \end{figure}
 
 kemudian tambahkan kode berikut untuk memasukkan email, password dan tombol untuk mengclick login secara otomatis: 
-\begin{verbatim}
-browser.find_element_by_id('email').
-send_keys('nsfthrn@gmail.com')
+\lstinputlisting[language=Python, firstline=16, lastline=18
+, caption=Memasukkan Email]{src/mia.py}
 
-browser.find_element_by_id('password').
-send_keys("C4CA2F")
-
-browser.find_element_by_class_name('le-button').click() 
-\end{verbatim}
 \newpage
 Kemudian akan muncul proses login seperti berikut:
 \begin{figure}[h]
@@ -404,16 +374,7 @@ Hasilnya  di Google Chrome Akan masuk di halaman whatsdinda :
 Kali ini kita akan membuat langkah-langkah untuk masuk ke akun tokoperhutani.com dan melihat nik KTP pada menu profil.  
 \subsection{Tutorial Login}
 Untuk login pada akun tokoperhutani.com masukkan kode berikut pada tool Spyder:
-\begin{verbatim}
-browser.find_element_by_xpath('/html/body/div
-/nav/div/div[2]/ul/li[1]/a/strong').click()
-browser.find_element_by_id('email').send_keys
-('novinurinabb25@gmail.com')
-browser.find_element_by_id('password').send_k
-eys("86083F")
-browser.find_element_by_class_name('le-button
-').click()
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=20, lastline=23, caption=Tutorial Login]{src/mia.py}
 
 Penjelasan:
 \begin{enumerate}
@@ -426,11 +387,7 @@ Penjelasan:
 \newpage
 \subsection{Mencari NIK KTP Pada Profil}
 Untuk mencari dan menemukan NIK KTP pada profil, masukkan code berikut :
-\begin{verbatim}
-browser.find_element_by_xpath('/html/body/div/nav/div/div[2]
-/ul/strong/li/a').click()
-browser.find_element_by_link_text('Profile').click()
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=25, lastline=26, caption=Mencari NIK]{src/mia.py}
 
 Penjelasan:
 \begin{enumerate}
@@ -611,53 +568,15 @@ Maka akan menjalankan kode baris ke 2:
 
 \subsection{Tutorial Mencari Jenis Kayu Jati 1}
 Berikut adalah tutorial untuk mencari Jenis Kayu Jati Dan memasukkannya ke keranjang. Masukkan code berikut ini pada spyder:
-\begin{verbatim}
+
 Code Untuk masuk ke halaman web tokoperhutani.com :
-from selenium import webdriver
-opsi = webdriver.firefox.options.Options()
-opsi.headless = False
-binary = webdriver.firefox.firefox_binary.FirefoxBinary
-('C:\\Program Files\\Mozilla Firefox\\firefox.exe')
-cap = webdriver.common.desired_capabilities.Desired
-Capabilities().FIREFOX
-cap['marionette'] = True
-browser=webdriver.Firefox(options=opsi,capabi
-lities=cap,firefox_binary=binary)
-browser.get('https://tokoperhutani.com/')
-pemberitahuan = browser.find_element_by_xpath('//*[@id="
-bannerModal"]/div/div/div[1]/button').click()
-retail = browser.get('https://tokoperhutani.
-com/beranda')
+\lstinputlisting[language=Python, firstline=28, lastline=40, caption=Masuk Ke Laman Web]{src/mia.py}
 
 Code untuk login di web tokoperhutani.com :
-login = browser.find_element_by_xpath('/html/body/
-div/nav/div/div[2]/ul/li[1]/a/strong').click()
-email = browser.find_element_by_id('email').send_
-keys('novinurinabb25@gmail.com')
-password = browser.find_element_by_id('password').
-send_keys("86083F")
-tombol = browser.find_element_by_class_name
-('le-button').click()
-browser.find_element_by_link_text('Beranda')
-.click()
+\lstinputlisting[language=Python, firstline=42, lastline=45, caption=Login Tokoperhutani]{src/mia.py}
 
 Code untuk memilih jenis kayu jati :
-retail = browser.get('https://tokoperhutani.com/beranda')
-wilayah = browser.find_element_by_id
-('wilayah').click()
-plh_wilayah = browser.find_element_by_xpath('//*[@id="wilayah"]
-/option[4]').click()
-kota = browser.find_element_by_id('kota').
-click()
-plh_kota = browser.find_element_by_xpath
-('//*[@id="kota"]/option[3]').click()
-tpk = browser.find_element_by_id
-('select_kota').click()
-plh_tpk = browser.find_element_by_xpath
-('//*[@id="select_kota"]/option[3]').click()
-cari = browser.find_element_by_id('i_submit').
-click()
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=47, lastline=54, caption=Memilih Kayu]{src/mia.py}
 
 Berikut hasil running dari code :
 \begin{figure}[h]
@@ -667,10 +586,8 @@ Berikut hasil running dari code :
 \end{figure}
 
 Kemudian masukkan code ini untuk memasukkan kayu jati ke dalan keranjang :
-\begin{verbatim}
-beli_sekarang = browser.find_element_by_xpath('/html
-/body/div/strong/div[8]/div/div/form/input').click()
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=56, lastline=56, caption=Masukkan Kayu Ke Retail]{src/mia.py}
+
 Hasil dari code adalah sebagai berikut :
 \begin{figure}[h]
 	\centering
@@ -689,14 +606,7 @@ Tekan beli sekarang maka otomatis barang akan masuk ke dalam keranjang belanja :
 \subsection{Konfirmasi Pesanan 1}
 Tutorial selanjutnya yaitu konfirmasi pesanan hingga menerima email pesanan. 
 Masukkan code berikut pada spyder :
-\begin{verbatim}
-lanjut_belanja = browser.find_element_by_xpath('/html
-/body/div[1]/strong/div[5]/div/div/div[3]/a/button').
-click()
-bank_bri = browser.find_element_by_xpath('/
-html/body/div/strong/section[2]/div/div[2]/
-div/div/form/div/ul/li[2]/label/img').click()
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=58, lastline=59, caption=Konfirmasi Pesanan]{src/mia.py}
 
 Berikut hasil debug dari code :
 \begin{figure}[h]
@@ -706,10 +616,8 @@ Berikut hasil debug dari code :
 \end{figure}
  
 Kemudian Masukkan code berikut untuk melanjutkan proses:
-\begin{verbatim}
-konfirmasi_pemesanan = browser.find_element_by_xpath('//*
-[@id="confirmOrder"]')
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=61, lastline=61, caption=Melanjutkan Proses]{src/mia.py}
+
 Berikut hasil debug dari code: 
 \begin{figure}[h]
 	\centering
@@ -927,19 +835,8 @@ Hasil pengambilan data:
 \newpage
 \subsection{Tutorial Mengambil Data Dari Tabel Kayu Yang Dijual 2}
 Pada kali ini kita akan mengambil data dari tabel kayu yang dijual, untuk mendapatkan data masukkan code berikut, code ini berfungsi umtuk mencari kayu yang dijual disini saya mencari jenis kayu jati :
-\begin{verbatim}
-browser.get('https://tokoperhutani.com/beranda')
-browser.find_element_by_id('wilayah').click()
-browser.find_element_by_xpath('//*[@id="wilayah"]
-/option[4]').click()
-browser.find_element_by_id('kota').click()
-browser.find_element_by_xpath('//*[@id="kota"]/
-option[3]').click()
-browser.find_element_by_id('select_kota').click()
-browser.find_element_by_xpath('//*[@id="select_
-kota"]/option[3]').click()
-browser.find_element_by_id('i_submit').click()
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=63, lastline=70, caption=Pencarian Kayu]{src/mia.py}
+
 Berikut Hasil dari eksekusi codenya akan masuk ke halaman pencarian kayu, disini saya mencari jeni kayu jati  :
 \begin{figure}[h]
 	\centering
@@ -948,84 +845,8 @@ Berikut Hasil dari eksekusi codenya akan masuk ke halaman pencarian kayu, disini
 \end{figure}
 
 Kemudian untuk mengambil data yang telah kita cari dari tabel kayu yang dijual masukkan code sebagai berikut :
-\begin{verbatim}
-ketersediaan = browser.find_element_by_xpath
-('/html/body/div/div[8]/div/div/form/div/div
-[3]/div[2]/table/tbody/tr[1]/td[2]/span')
-print('Ketersediaan: ',ketersediaan.text)
-no_kapling = browser.find_element_by_xpath
-('/html/body/div/div[8]/div/div/form/div/
-div[3]/div[2]/table/tbody/tr[1]/td[3]/a')
-print('No Kapling: ',no_kapling.text)
-harga_awal_rp = browser.find_element_by_xpath
-('/html/body/div/div[8]/div/div/form/div/div
-[3]/div[2]/table/tbody/tr[1]/td[4]/div')
-print('Harga Awal Rp: ',harga_awal_rp.text)
-dif = browser.find_element_by_xpath('/html
-/body/div/div[8]/div/div/form/div/div[3]/d
-iv[2]/table/tbody/tr[1]/td[5]')
-print('Dif: ',dif.text)
-total_dif_rp = browser.find_element_by_xpath
-('/html/body/div/div[8]/div/div/form/div/div
-[3]/div[2]/table/tbody/tr[1]/td[6]')
-print('Total Dif RP: ',total_dif_rp.text)
-harga_akhir_rp = browser.find_element_by_xpath
-('/html/body/div/div[8]/div/div/form/div/div
-[3]/div[2]/table/tbody/tr[1]/td[7]/span')
-print('Harga Akhir RP: ',harga_akhir_rp.text)
-jenis_kayu = browser.find_element_by_xpath
-('/html/body/div/div[8]/div/div/form/div/
-div[3]/div[2]/table/tbody/tr[1]/td[9]')
-print('Jenis Kayu: ',jenis_kayu.text)
-sortimen = browser.find_element_by_xpath
-('/html/body/div/div[8]/div/div/form/div/
-div[3]/div[2]/table/tbody/tr[1]/td[10]')
-print('Sortimen: ',sortimen.text)
-panjang = browser.find_element_by_xpath
-('/html/body/div/div[8]/div/div/form/div
-/div[3]/div[2]/table/tbody/tr[1]/td[11]')
-print('Panjang: ',panjang.text)
-lebar = browser.find_element_by_xpath
-('/html/body/div/div[8]/div/div/form/div
-/div[3]/div[2]/table/tbody/tr[1]/td[12]')
-print('Lebar: ',lebar.text)
-tebal_atau_diameter = browser.find_element_by_xpath
-('/html/body/div/div[8]/div/div/form/div/div
-[3]/div[2]/table/tbody/tr[1]/td[13]')
-print('Tebal Atau Diameter: ',tebal_atau_diameter.text)
-mutu = browser.find_element_by_xpath
-('/html/body/div/div[8]/div/div/form/div/
-div[3]/div[2]/table/tbody/tr[1]/td[14]')
-print('Mutu: ',mutu.text)
-jumlah = browser.find_element_by_xpath
-('/html/body/div/div[8]/div/div/form/
-div/div[3]/div[2]/table/tbody/tr[1]/td[15]')
-print('Jumlah: ',jumlah.text)
-status = browser.find_element_by_xpath
-('/html/body/div/div[8]/div/div/form/
-div/div[3]/div[1]/div/table/thead/tr/th[16]')
-print('Status: ',status.text)
-cacat_kayu = browser.find_element_by_xpath
-('/html/body/div/div[8]/div/div/form/div/
-div[3]/div[2]/table/tbody/tr[1]/td[18]')
-print('Cacat Kayu: ',cacat_kayu.text)
-jenis_tebangan = browser.find_element_by_xpath
-('/html/body/div/div[8]/div/div/form/div/div
-[3]/div[2]/table/tbody/tr[1]/td[19]')
-print('Jenis Tebangan: ',jenis_tebangan.text)
-usia_tayang_kapling = browser.find_element_by_xpath
-('/html/body/div/div[8]/div/div/form/div/div[3]
-/div[2]/table/tbody/tr[1]/td[20]')
-print('Usia Tayang Kapling: ',usia_tayang_kapling.text)
-tahun_kapling = browser.find_element_by_xpath
-('/html/body/div/div[8]/div/div/form/div
-/div[3]/div[2]/table/tbody/tr[1]/td[21]')
-print('Tahun Kapling: ',tahun_kapling.text)
-tahun_produksi = browser.find_element_by_xpath
-('/html/body/div/div[8]/div/div/form/div/div
-[3]/div[2]/table/tbody/tr[1]/td[22]')
-print('Tahun Produksi: ',tahun_produksi.text)
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=72, lastline=106, caption=Mencari Kayu]{src/mia.py}
+
 Hasilnya data yang didapat akan di tampikan di spyder dengan tampilan sebagai berikut :
 \begin{figure}[h]
 	\centering
@@ -1040,6 +861,7 @@ browser.find_element_by_xpath('/html/body/div/nav/div/div[2]
 /ul/strong/li/a').click()
 browser.find_element_by_link_text('Pesanan').click()
 \end{verbatim}
+\lstinputlisting[language=Python, firstline=108, lastline=108, caption=Masuk Ke User]{src/mia.py}
 
 Hasil eksekusi code akan menampilkan data pesanan dari menu user, berikut tampilan halaman :
 \begin{figure}[h]
@@ -1049,39 +871,9 @@ Hasil eksekusi code akan menampilkan data pesanan dari menu user, berikut tampil
 \end{figure}
 
 Kemudian untuk mengambil data pesanan dari tabel pesanan dimenu user masukkan code sebagai berikut :
-\begin{verbatim}
-tanggal_pesan = browser.find_element_by_xpath
-('/html/body/div/strong/div[6]/div[2]/section
-[2]/div/div/div[1]/form/div/div[3]/div[2]/table
-/tbody/tr/td[1]')
-print('Tanggal Pesanan: ',tanggal_pesan.text)
-invoice = browser.find_element_by_xpath('/html
-/body/div/strong/div[6]/div[2]/section[2]/div/
-div/div[1]/form/div/div[3]/div[2]/table/tbody/
-tr/td[2]')
-print('Invoice: ',invoice.text)
-lokasi = browser.find_element_by_xpath
-('/html/body/div/strong/div[6]/div[2]/section
-[2]/div/div/div[1]/form/div/
-div[3]/div[2]/table/tbody/tr/td[3]')
-print('Lokasi: ',lokasi.text)
-volume = browser.find_element_by_xpath
-('/html/body/div/strong/div[6]/div[2]/
-section[2]/div/div/div[1]/form/div/div[3]/div
-[2]/table/tbody/tr/td[4]')
-print('Voume: ',volume.text)
-total_harga_rp = browser.find_element_by_xpath
-('/html/body/div/strong/div[6]/div[2]/section
-[2]/div/div/div[1]/form/div/div[3]/div[2]/
-table/tbody/tr/td[5]')
-print('Total Harga: ',total_harga_rp.text)
-saluran_bayar = browser.find_element_by_xpath
-('/html/body/div/strong/div[6]/div[2]/section
-[2]/div/div/div[1]/form/div/div[3]
-/div[2]/table/tbody/tr/td[6]')
-print('Saluran Bayar: ',saluran_bayar.text)
-\end{verbatim}
-Hasilnya data yang didapat akan di tampikan di spyder dengan tampilan sebagai berikut :
+\lstinputlisting[language=Python, firstline=110, lastline=121, caption=Mengambil Data Pesanan]{src/mia.py}
+
+Hasilnya data yang didapat akan di tampilkan di spyder dengan tampilan sebagai berikut :
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.6]{figures/mengambildatapesanan}
@@ -1459,39 +1251,7 @@ Hasilnya pada python console di spyder akan muncul status user seperti berikut:
 \subsection{Mengecek Status User}
 Tutorial kali ini kita akan mengecek status pada user yang kita miliki apakah statusnya aktif atau tidak. Untuk mengetahui status user kita, maka sebelumnya kita harus login ke akun kita terlebih dahulu lalu mengambil data pada menu user nantinya.
 Masukan kode berikut kedalam tools spyder:
-\begin{verbatim}
-from selenium import webdriver
-from time import sleep
-opsi = webdriver.firefox.options.Options()
-opsi.headless = False
-binary = webdriver.firefox.firefox_binary.Firefox
-Binary('C:\\Program Files\\Mozilla Firefox\\firefox.exe')
-cap = webdriver.common.desired_capabilities.
-DesiredCapabilities().FIREFOX
-cap['marionette'] = True
-browser=webdriver.Firefox(options=opsi,capabilities
-=cap,firefox_binary=binary)
-web_pht = 'https://www.tokoperhutani.com/'
-browser.get(web_pht)
-
-#metutup navigasi
-browser.find_element_by_xpath('//*[@id="bannerModal"]
-/div/div/div[1]/button').click()
-
-#login
-browser.find_element_by_xpath('/html/body/div/nav/
-div/div[2]/ul/li[1]/a/strong').click()
-browser.find_element_by_id('email').send_keys
-('novinurinabb25@gmail.com')
-browser.find_element_by_id('password').send_keys("86083F")
-browser.find_element_by_class_name('le-button').click()
-sleep(10)
-
-#mengecek status user
-status = browser.find_element_by_xpath('/html/body/div[1]
-/nav/div/div[2]/ul/strong/li/a/img').get_attribute("title")
-print(status)
-\end{verbatim}
+\lstinputlisting[language=Python, firstline=123, lastline=149, caption=Mengecek Status User]{src/mia.py}
 
 \newpage
 Jika berhasil maka akan akan muncul keterangan "status aktif" pada python console di spyder seperti gambar di bawah ini :
