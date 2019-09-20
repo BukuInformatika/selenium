@@ -252,7 +252,7 @@ Hasilnya akhir pada Google Chrome Akan mucul seperti ini:
 Apabila telah selesai melakukan pendaftaran, selanjutnya akan ada verifikasi dari pihak Tokoperhutani sehari setelah pendaftaran dilakukan.
 
 \newpage
-\section{Reset Password, Login Dan Menghubungi Contact Person di WA WA}
+\section{Reset Password, Login Dan Menghubungi Contact Person di WA}
 \subsection{Login}
 Selanjutnya kita akan mencoba untuk melakukan login pada tool dengan selenium. 
 Masukkan kode berikut untuk menampilkan form login:
@@ -368,6 +368,8 @@ Hasilnya  di Google Chrome Akan masuk di halaman whatsdinda :
 	\includegraphics[scale=0.30]{figures/5linkwa}
 	\caption{Halaman Whatsdinda}
 \end{figure}
+
+
 
 \newpage
 \section{Cara Login Dan Melihat NIK KTP Pada Profil}
@@ -564,7 +566,96 @@ Maka akan menjalankan kode baris ke 2:
 \end{figure}
 
 \newpage
+\subsection{Menemukan NIK KTP Pada Profile 5}
+Untuk menemukan NIK KTP pada profil masukkan code seperti pada listing \ref{kode3}
+\begin{lstlisting}[caption={kode programUntuk menemukan NIK KTP pada profil},label={kode3}]
+browser.find_element_by_xpath('/html/body/div/nav/div/div[2]
+/ul/strong/li/a').click()
+browser.find_element_by_link_text('Profile').click()
+\end{lstlisting}
+
+Penjelasan :
+\begin{enumerate}
+	\item Baris Pertama untuk menampilkan menu pada bar
+	\item Baris Kedua untuk mengklik profile dan menampilkan data dan di dalamnya terdapat NIK
+\end{enumerate}
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.28]{figures/L1}
+	\caption{Menu Bar Profil}
+\end{figure}
+\newpage
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/L2}
+	\caption{Profil}
+\end{figure}
+
+\newpage
 \section{Tutorial Mencari Jenis Kayu Jati, Memasukkannya ke Keranjang Pembelian, dan Konfirmasi Pesanan }
+
+\subsection{Mencari Jenis Kayu jati Dan memasukkannya ke keranjang}
+Code untuk memilih jenis kayu jati seperti pada listing \ref{kode4}
+\begin{lstlisting}[caption={kode program untuk memilih jenis kayu jati},label={kode4}]
+retail = browser.get('https://tokoperhutani.com/beranda')
+wilayah = browser.find_element_by_id
+('wilayah').click()
+plh_wilayah = browser.find_element_by_xpath('//*[@id="wilayah"]
+/option[4]').click()
+kota = browser.find_element_by_id('kota').
+click()
+plh_kota = browser.find_element_by_xpath
+('//*[@id="kota"]/option[3]').click()
+tpk = browser.find_element_by_id
+('select_kota').click()
+plh_tpk = browser.find_element_by_xpath
+('//*[@id="select_kota"]/option[3]').click()
+cari = browser.find_element_by_id('i_submit').
+click()
+\end{lstlisting}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.20]{figures/51}
+	\caption{Mencari kayu jati}
+\end{figure}
+
+\newpage
+Klik Beli Sekarang otomatis keranjang akan terisi dengan kode seperti pada listing \ref{kode5}
+\begin{lstlisting}[caption={kode program untuk mengisi keranjang},label={kode5}]
+beli_sekarang = browser.find_element_by_xpath('/html
+/body/div/strong/div[8]/div/div/form/input').click()
+\end{lstlisting}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.20]{figures/52}
+	\caption{Keranjang Terisi}
+\end{figure}
+
+\newpage
+\subsection{Konfirmasi Pesanan Sampai Keluar Email Pemesanan}
+Masukkan code berikut pada spyder untuk konfirmasi pemesanan seperti pada listing \ref{kode6}
+\begin{lstlisting}[caption={kode program untuk konfirmasi pemesanan},label={kode6}]
+konfirmasi_pemesanan = browser.find_element_by_xpath('//*
+[@id="confirmOrder"]')
+\end{lstlisting}
+ 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.20]{figures/61}
+	\caption{Konfirmasi Pembayaran}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.20]{figures/62}
+	\caption{Pesan Email}
+\end{figure}
+
 
 \subsection{Tutorial Mencari Jenis Kayu Jati 1}
 Berikut adalah tutorial untuk mencari Jenis Kayu Jati Dan memasukkannya ke keranjang. Masukkan code berikut ini pada spyder:
@@ -777,6 +868,178 @@ ke email masing masing untuk menunggu pembayaran
 \section{Tutorial mengambil data dari tabel kayu yang dijual dan mengambil data dari tabel pesanan}
 Berikut adalah tutorial untuk  mengambil data dari tabel kayu yang dijual dan pengambilan data dari tabel pesanan. 
 
+\subsection{Melakukan Pengambilan data dari tabel kayu yang dijual}
+Terlebih dahulu kita masukkan kodingan seperti pada listing \ref{kode7}
+\begin{lstlisting}[caption={kode program untuk pengambilan data},label={kode12}]
+browser.find_element_by_id('wilayah').click()
+browser.find_element_by_xpath('//*[@id="wilayah"]/
+option[4]').click()
+sleep(2)
+browser.find_element_by_id('kota').click()
+browser.find_element_by_xpath('//*[@id="kota"]/
+option[3]').click()
+sleep(2)
+browser.find_element_by_id('select_kota').click()
+browser.find_element_by_xpath('//*[@id="select_kota"]/
+option[3]').click()
+sleep(2)
+browser.find_element_by_id('i_submit').click()
+
+sleep(5)
+ketersediaan = browser.find_element_by_xpath('/html/
+body/div/strong/div[8]/div/div/form/div/div[3]/div[2]
+/table/tbody/tr[2]/td[2]/span')print('ketersediaan:
+',ketersediaan.text)
+
+no_kapling = browser.find_element_by_xpath('/html/body/
+div/strong/div[8]/div/div/form/div/div[3]/div[2]/table/
+tbody/tr[2]/td[3]/a')print('no_kapling: ',no_kapling.
+text)
+
+harga_awal = browser.find_element_by_xpath('/html/body/
+div/strong/div[8]/div/div/form/div/div[3]/div[2]/table/
+tbody/tr[2]/td[4]/div')print('harga_awal: ',harga_awal.
+text)
+
+total_dif = browser.find_element_by_xpath('/html/body/
+div/strong/div[8]/div/div/form/div/div[3]/div[2]/table/
+tbody/tr[2]/td[6]')print('total_dif: ',total_dif.text)
+
+harga_akhir = browser.find_element_by_xpath('/html/body/
+div/strong/div[8]/div/div/form/div/div[3]/div[2]/table/
+tbody/tr[2]/td[7]/span')print('harga_akhir: ',
+harga_akhir.text)
+
+jenis_kayu = browser.find_element_by_xpath('/html/body/
+div/strong/div[8]/div/div/form/div/div[3]/div[2]/table/
+tbody/tr[2]/td[9]')print('jenis_kayu: ',jenis_kayu.text)
+
+tahun_produksi = browser.find_element_by_xpath('/html/
+body/div/strong/div[8]/div/div/form/div/div[3]/div[2]/
+table/tbody/tr[2]/td[22]')print('tahun_produksi: ',
+tahun_produksi.text)
+
+tahun_kapling = browser.find_element_by_xpath('/html/
+body/div/strong/div[8]/div/div/form/div/div[3]/div[2]/
+table/tbody/tr[2]/td[21]')print('tahun_kapling: ',
+tahun_kapling.text)
+
+usia_tayang_kapling = browser.find_element_by_xpath
+('/html/body/div/strong/div[8]/div/div/form/div/
+div[3]/div[2]/table/tbody/tr[2]/td[20]')print
+('usia_tayang_kapling: ',usia_tayang_kapling.text)
+
+jenis_tebangan = browser.find_element_by_xpath
+('/html/body/div/strong/div[8]/div/div/form/
+div/div[3]/div[2]/table/tbody/tr[2]/td[19]')
+print('jenis_tebangan: ',jenis_tebangan.text)
+
+cacat_kayu = browser.find_element_by_xpath
+('/html/body/div/strong/div[8]/div/div/
+form/div/div[3]/div[2]/table/tbody/tr[2]/
+td[18]')print('cacat_kayu: ',cacat_kayu.text)
+
+status = browser.find_element_by_xpath
+('/html/body/div/strong/div[8]/div/div/
+form/div/div[3]/div[2]/table/tbody/tr[2]/
+td[17]')
+print('status: ',status.text)
+
+volume = browser.find_element_by_xpath
+('/html/body/div/strong/div[8]/div/div/
+form/div/div[3]/div[2]/table/tbody/tr
+[2]/td[16]')print('volume: ',volume.text)
+
+jumlah = browser.find_element_by_xpath
+('/html/body/div/strong/div[8]/div/div/
+form/div/div[3]/div[2]/table/tbody/tr
+[2]/td[15]')print('jumlah: ',jumlah.text)
+
+mutu = browser.find_element_by_xpath
+('/html/body/div/strong/div[8]/div/
+div/form/div/div[3]/div[2]/table/tbody/
+tr[2]/td[14]')print('mutu: ',mutu.text)
+
+panjang = browser.find_element_by_xpath
+('/html/body/div/strong/div[8]/div/div/
+form/div/div[3]/div[2]/table/tbody/tr
+[2]/td[11]')print('panjang: ',panjang.text)
+\end{lstlisting}
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/781}
+	\caption{Halaman pengambilan data dari tabel kayu}
+\end{figure}
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.6]{figures/782}
+	\caption{Hasil pengambilan data dari tabel kayu}
+\end{figure}
+
+\newpage
+\subsection{Melakukan Pengambilan Data dari Tabel Pesanan di Menu User}
+Untuk mendapatkan data pesanan kita masukkan code seperti pada listing \ref{kode8}
+\begin{lstlisting}[caption={kode program Untuk mendapatkan data pesanan},label={kode8}]
+browser.find_element_by_xpath('/html/body/
+div/nav/div/div[2]/ul/strong/li/a').click()
+browser.find_element_by_link_text('Pesanan')
+.click()
+\end{lstlisting}
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{figures/783}
+	\caption{Halaman pengambilan data dari tabel pesanan}
+\end{figure}
+
+untuk mengambil data pemesanan  maka masukkan kode  seperti pada listing \ref{kode9}
+\begin{lstlisting}[caption={kode program untuk mengambil data pemesanan},label={kode9}]
+tanggal_pesan = browser.find_element_by_xpath
+('/html/body/div/strong/div[6]/div[2]/section
+[2]/div/div/div[1]/form/div/div[3]/div[2]/
+table/tbody/tr/td[1]')print('Tanggal Pesanan:
+',tanggal_pesan.text)
+invoice = browser.find_element_by_xpath
+('/html/body/div/strong/div[6]/div[2]/
+section[2]/div/div/div[1]/form/div/div
+[3]/div[2]/table/tbody/tr/td[2]')
+print('Invoice: ',invoice.text)
+lokasi = browser.find_element_by_xpath
+('/html/body/div/strong/div[6]/div[2]
+/section[2]/div/div/div[1]/form/div/
+div[3]/div[2]/table/tbody/tr/td[3]')
+print('Lokasi: ',lokasi.text)
+volume = browser.find_element_by_xpath
+('/html/body/div/strong/div[6]/div[2]
+/section[2]/div/div/div[1]/form/div
+/div[3]/div[2]/table/tbody/tr/td[4]')
+print('Voume: ',volume.text)
+total_harga_rp = browser.find_element_
+by_xpath('/html/body/div/strong/div
+[6]/div[2]/section[2]/div/div/div[1]
+/form/div/div[3]/div[2]/table/tbody/
+tr/td[5]')print('Total Harga: ',total
+_harga_rp.text)
+saluran_bayar = browser.find_element
+_by_xpath('/html/body/div/strong/
+div[6]/div[2]/section[2]/div/div/
+div[1]/form/div/div[3]/div[2]/table/
+tbody/tr/td[6]')
+print('Saluran Bayar: ',saluran_bayar
+.text)
+\end{lstlisting}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.6]{figures/784}
+	\caption{Halaman data dari tabel pesanan}
+\end{figure}
+
 \subsection{Tutorial mengambil data dari tabel kayu yang dijual 1}
 Untuk mengambil data penjualan kayu kita harus login dan membuka halaman pencarian kayu.
 Masukan kode berikut untuk login dan masuk ke halaman pencarian kayu:
@@ -856,11 +1119,7 @@ Hasilnya data yang didapat akan di tampikan di spyder dengan tampilan sebagai be
 
 \subsection{Tutorial Mengambil Data Dari Tabel Pesanan Di Menu User 2}
 Pada kali ini kita akan melakukan tutorial mengambil data dari tabel pesanan di menu user. Untuk mendapatkan data pesanan masukkan code berikut, code ini berfungsi untuk masuk ke user dan menampilkan data pesanan :
-\begin{verbatim}
-browser.find_element_by_xpath('/html/body/div/nav/div/div[2]
-/ul/strong/li/a').click()
-browser.find_element_by_link_text('Pesanan').click()
-\end{verbatim}
+
 \lstinputlisting[language=Python, firstline=108, lastline=108, caption=Masuk Ke User]{src/mia.py}
 
 Hasil eksekusi code akan menampilkan data pesanan dari menu user, berikut tampilan halaman :
@@ -1333,4 +1592,48 @@ Hasilnya pada python console di spyder akan muncul status user seperti berikut:
 	\centering
 	\includegraphics[scale=0.7]{figures/T9_SU}
 	\caption{Hasil pengecekan status user}
+\end{figure}
+
+\newpage
+\subsection{Mengecek Status User}
+Mengecek status pada user pada toko perhutani yang apakah statusnya aktif atau tidak. Untuk mengetahui status user aktif atau tidak, sebelumnya kita harus login terlebih dahulu ke akun kita pada toko perhutani lalu mengambil data pada menu user nantinya.
+Masukan kode berikut kedalam tools spyder seperti pada listing \ref{kode10}
+\begin{lstlisting}[caption={kode program untuk cek status},label={kode10}]
+from selenium import webdriver
+from time import sleep
+opsi = webdriver.firefox.options.Options()
+opsi.headless = False
+binary = webdriver.firefox.firefox_binary.Firefox
+Binary('C:\\Program Files\\Mozilla Firefox\\firefox.exe')
+cap = webdriver.common.desired_capabilities.
+DesiredCapabilities().FIREFOX
+cap['marionette'] = True
+browser=webdriver.Firefox(options=opsi,capabilities
+=cap,firefox_binary=binary)
+web_pht = 'https://www.tokoperhutani.com/'
+browser.get(web_pht)
+
+#close modal
+browser.find_element_by_xpath('//*[@id="bannerModal"]
+/div/div/div[1]/button').click()
+
+#login akun
+browser.find_element_by_xpath('/html/body/div/nav/div
+/div[2]/ul/li[1]/a/strong').click()
+browser.find_element_by_id('email').send_keys
+('donnydgr@gmail.com')
+browser.find_element_by_id('password').send_keys
+("MARAPONU00")
+browser.find_element_by_class_name('le-button').click()
+
+#Cek status user
+status = browser.find_element_by_xpath('/html/body/div[1]
+/nav/div/div[2]/ul/strong/li/a/img').get_attribute("title")
+print(status)
+\end{lstlisting} 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{figures/91}
+\caption{Mengecek Status User}
 \end{figure}
